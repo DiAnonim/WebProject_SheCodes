@@ -1,13 +1,26 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+
 class CustomUser(AbstractUser):
+    # class Role(models.TextChoices):
+    #     Admin = 'Admin'
+    #     Director = 'Director'
+    #     User = 'User'
     class Gender(models.TextChoices):
         Man = 'Man'
         Woman =  'Woman'  
-    Image=models.ImageField(upload_to='user/',default="user/")
+    Image=models.ImageField(upload_to='media/user_image',default="media/default.png")
     gender=models.CharField(max_length=10,choices=Gender.choices,default=Gender.Man)
+    birthday=models.DateField(null=True)
     phone=models.CharField(max_length=20)
+    # role = models.CharField(max_length=50, choices=Role.choices, default=Role.User)
+
+    def save(self, *args, **kwargs):
+    #     if not self.pk:
+    #         self.role = self.base_role
+            return super().save(*args, **kwargs)
+
   
-# Create your models here.
 class Shelter(models.Model):
     image=models.ImageField(upload_to='images/shelter', blank=True, null=True)
     name = models.CharField(max_length=100)

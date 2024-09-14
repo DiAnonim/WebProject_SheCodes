@@ -4,12 +4,12 @@ from django.views import View
 
 # from app.models import Todo, Comment
 from app.forms import UserForm, LoginForm
+from app.models import CustomUser
 
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView, DetailView, TemplateView
 from django.contrib.auth.views import LoginView, LogoutView
 
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.models import User
 
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
@@ -19,40 +19,40 @@ from django.core.mail import send_mail
 
 # Вход, выход и регистрация
 class SignUpView(CreateView):
-    model = User
+    model = CustomUser
     form_class = UserForm
     template_name = "signup.html"
     success_url = reverse_lazy('message')
     succses_message = 'User created successfully. Now you can login'
     
-    def send_verification_email(self, user):
-        token = default_token_generator.make_token(user)
-        link = self.request.build_absolute_uri(f'/verify/{user.pk}/{token}/')
-        subject = 'Verify your email'
-        body = f"Hello {user.username}! \nPlease, confirm your email by clicking on the link below: \n{link}"
-        send_mail(
-            subject, body, 'd1anonim.555@gmail.com', [user.email], fail_silently=False)
+    # def send_verification_email(self, user):
+    #     token = default_token_generator.make_token(user)
+    #     link = self.request.build_absolute_uri(f'/verify/{user.pk}/{token}/')
+    #     subject = 'Verify your email'
+    #     body = f"Hello {user.username}! \nPlease, confirm your email by clicking on the link below: \n{link}"
+    #     send_mail(
+    #         subject, body, 'd1anonim.555@gmail.com', [user.email], fail_silently=False)
         
-    def form_valid(self, form):
-        response = super().form_valid(form)
-        user = self.object  
-        user.is_active = False
-        user.save()
-        self.send_verification_email(self.object)
-        return response
+    # def form_valid(self, form):
+    #     response = super().form_valid(form)
+    #     user = self.object  
+    #     user.is_active = False
+    #     user.save()
+    #     self.send_verification_email(self.object)
+    #     return response
     
 
-class VerifyEmailView(View):
-    def get(self, request, pk, token):
-        user = User.objects.get(pk=pk)
-        if default_token_generator.check_token(user, token):
-            user.is_active = True
-            user.save()
-            messages.success(request, 'Your email has been verified')
-            return redirect('login')
-        else:
-            messages.error(request, 'Invalid verification link')
-            return redirect('home')
+# class VerifyEmailView(View):
+#     def get(self, request, pk, token):
+#         user = CustomUser.objects.get(pk=pk)
+#         if default_token_generator.check_token(user, token):
+#             user.is_active = True
+#             user.save()
+#             messages.success(request, 'Your email has been verified')
+#             return redirect('login')
+#         else:
+#             messages.error(request, 'Invalid verification link')
+#             return redirect('home')
     
 class LoginView(SuccessMessageMixin, LoginView):
     form_class = LoginForm 
@@ -77,7 +77,7 @@ class ErrorView(TemplateView):
 
 # Профиль
 class ProfileView(LoginRequiredMixin, DetailView):
-    model = User
+    model = CustomUser
     template_name = "profile.html"
     context_object_name = "user"
     
