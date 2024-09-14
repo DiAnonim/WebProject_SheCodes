@@ -27,9 +27,12 @@ urlpatterns = [
     path('comment/delete/<int:pk>/', CommentDeleteView.as_view(), name='comment_delete'),
 
     path('admin/home/',MainView.as_view(), name='admin_home'),
-    path('admin/university/', UniversityListView.as_view(), name='university'),
-    
-
+    path('admin/university/', UniversityListView.as_view(), name='admin_university_list'),
+    path('admin/mentor/', MentorListView.as_view(), name='admin_mentor_list'),
+    path('admin/categoryanimal/', CategoryAnimalListView.as_view(), name='admin_categoryanimal_list'),
+    path('admin/categorypost',PostCategoryListView.as_view(), name='admin_categorypost_list'),
+    path('admin/shelter/', ShelterListView.as_view(), name='admin_shelter_list'),
+    path('admin/animal/', AnimalListView.as_view(), name='admin_animal_list'),
     # path('todo/create', TodoCreateView.as_view(), name='create_todo'),
     # path('todo/detail/<int:pk>/', TodoDetailView.as_view(), name='todo_detail'),
     # path('todo/update/<int:pk>/', TodoUpdateView.as_view(), name='todo_update'),

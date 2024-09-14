@@ -67,11 +67,13 @@ class MessageView(TemplateView):
 class ErrorView(TemplateView):
     template_name = "error.html"
 
-
-    
-    
-    
 # CRUD для приюта 
+class ShelterListView(ListView):
+    model = Shelter
+    template_name = "customAdmin/shelter.html"
+    context_object_name = "shelters"
+    
+
 class ShelterCreateView(LoginRequiredMixin, CreateView):
     model = Shelter
     form_class = ShelterForm
@@ -124,13 +126,15 @@ class CommentDeleteView(LoginRequiredMixin, DeleteView):
     model = Comment
     template_name = "delete_comment.html"
     success_url = reverse_lazy('message')
-    
-
 
 class MainView(TemplateView):
     template_name = "customAdmin/main.html"
     
 #Животные 
+class AnimalListView(ListView):
+    model = Animal
+    template_name = "customAdmin/animal.html"
+    context_object_name = "animals"
 class AnimalCreateView(CreateView):
     model = Animal 
     form_class = AnimalForm
@@ -185,6 +189,11 @@ class UniversityDetailView(DetailView):
     context_object_name = "university"
 
 #Менторы
+class MentorListView(ListView):
+    model = Mentor
+    template_name = "customAdmin/mentor.html"
+    context_object_name = "mentors"
+
 class MentorCreateView(CreateView):
     model = Mentor
     form_class = MentorForm
@@ -207,6 +216,12 @@ class MentorDetailView(DetailView):
     model = Mentor
     template_name = "mentor_detail.html"
     context_object_name = "mentor"
+
+#Категории животных
+class CategoryAnimalListView(ListView):
+    model = CategoryAnimal
+    template_name = "customAdmin/animalCategory.html"
+    context_object_name = "category_animals"
 
 class CategoryAnimalCreateView(CreateView):
     model = CategoryAnimal
@@ -231,11 +246,34 @@ class CategoryAnimalDetailView(DetailView):
     template_name = "category_animal_detail.html"
     context_object_name = "category_animal"
 
-    
-    
+#Post Category 
+class PostCategoryListView(ListView):
+    model = CategoryPost
+    template_name = "customAdmin/postCategory.html"
+    context_object_name = "post_categories"
 
+class PostCategoryCreateView(CreateView):
+    model = CategoryPost
+    form_class = CategoryPostForm
+    template_name = "create_category_post.html"
+    success_url = reverse_lazy('message')
+    success_message = 'Category created successfully'
 
+class PostCategoryDeleteView(DeleteView):
+    model = CategoryPost
+    template_name = "delete_category_post.html"
+    success_url = reverse_lazy('message')
 
+class PostCategoryUpdateView(UpdateView):
+    model = CategoryPost
+    form_class = CategoryPostForm
+    template_name = "update_category_post.html"
+    success_url = reverse_lazy('message')
+
+class PostCategoryDetailView(DetailView):
+    model = CategoryPost
+    template_name = "category_post_detail.html"
+    context_object_name = "category_post"
 
 
     
