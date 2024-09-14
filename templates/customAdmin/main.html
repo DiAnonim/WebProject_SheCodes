@@ -21,17 +21,17 @@
         <div class="boxes">
             <div class="box box1">
                 <i class="uil uil-thumbs-up"></i>
-                <span class="text">Total Likes</span>
+                <span class="text">Total Animals</span>
                 <span class="number">50,120</span>
             </div>
             <div class="box box2">
                 <i class="uil uil-comments"></i>
-                <span class="text">Comments</span>
+                <span class="text">Total Posts</span>
                 <span class="number">20,120</span>
             </div>
             <div class="box box3">
                 <i class="uil uil-share"></i>
-                <span class="text">Total Share</span>
+                <span class="text">Total Users</span>
                 <span class="number">10,120</span>
             </div>
         </div>
@@ -46,36 +46,42 @@
         <div class="activity-data">
             <div class="data names">
                 <span class="data-title">ФИО</span>
-                <span class="data-list">Prem Shahi</span>
+                {% for user in customusers %}
+                <span class="data-list">{{user.first_name}} {{user.last_name}}</span>
+
+                {% endfor %}
          
             </div>
             <div class="data surnames">
                 <span class="data-title">Email</span>
-                <span class="data-list">premshahi@gmail.com</span>
-              
+                {% for user in customusers %}
+                <span class="data-list">{{user.email}}</span>
+                {% endfor %}
             </div>
             <div class="data birthdate">
                 <span class="data-title">Дата рождения</span>
-                <span class="data-list">2022-02-12</span>
+                {% for user in customusers %}
+                <span class="data-list">{{user.birthday}}</span>
+                {% endfor %}
                
             </div>
             <div class="data gender">
                 <span class="data-title">Пол</span>
-                <span class="data-list">New</span>
+                {% for user in customusers %}
+                <span class="data-list">{{user.gender}}</span>
+                {% endfor %}
                
             </div>
           
             <div class="data gender"></div>
                 <span class="data-title">Номер телефона</span>
-                <span class="data-list">New</span>
+                {% for user in customusers %}
+                <span class="data-list">{{user.phone}}</span>
+                {% endfor %}
                
             </div>
 
-            <div class="data gender"></div>
-                <span class="data-title">Nickname</span>
-                <span class="data-list">New</span>
-               
-            </div>
+    
 
              <div class="data gender"></div>
                 <span class="data-title">Madification</span>

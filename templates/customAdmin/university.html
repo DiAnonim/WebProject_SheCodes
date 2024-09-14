@@ -1,34 +1,44 @@
 {% extends 'customAdmin/home.html' %}
 {% block content %}
- <div class="title">
-                    <i class="uil uil-clock-three"></i>
-                    <span class="text">Университеты</span>
+<div class="dash-content">
+    <div class="overview">
+        <div class="title">
+            <i class="uil uil-tachometer-fast-alt"></i>
+            <span class="text">Университеты</span>
+        </div>
+        <div class="activity">
+            <div class="title">
+                <i class="uil uil-clock-three"></i>
+                <span class="text">Список университетов</span>
+            </div>
+
+            <div class="activity-data">
+                <div class="data names">
+                    <span class="data-title">Название</span>
+                    {% for university in universities %}
+                    <span class="data-list">{{university.name}}</span>
+                    {% endfor %}
+
+                </div>
+                <div class="data email">
+                    <span class="data-title">Official Website</span>
+                    {% for university in universities %}
+                    <span class="data-list">{{university.website}}</span>
+                    {% endfor %}
+                </div>
+                <div class="data joined">
+                    <span class="data-title">Phone Number</span>
+                    <span class="data-list">{{university.phone_number}}</span>
+
                 </div>
 
-                <div class="activity-data">
-                    <div class="data names">
-                        <span class="data-title">Название</span>
-                        {% for university in universities %}
-                        <span class="data-list">{{university.name}}</span>
-                        {% endfor %}
-                 
-                    </div>
-                    <div class="data email">
-                        <span class="data-title">Official Website</span>
-                        {% for university in universities %}
-                        <span class="data-list">{{university.website}}</span>
-                        {% endfor %}      
-                    </div>
-                    <div class="data joined">
-                        <span class="data-title">Phone Number</span>
-                        <span class="data-list">{{university.phone_number}}</span>
-                       
-                    </div>
-                    
-                    <div class="data status">
-                        <span class="data-title">Button</span>
-                        <span class="data-list">Liked</span>  
-                        
-                    </div>
+                <div class="data status">
+                    <span class="data-title">Button</span>
+                    <span class="data-list">Liked</span>
+
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
