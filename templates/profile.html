@@ -26,6 +26,13 @@
         <p>Birthday: {{ user.birthday | isHaveValue }}</p>
         <p>Phone: {{ user.phone | isHaveValue }}</p>
         <p>Gender: {{ user.get_gender_display | isHaveValue }}</p>
+
+        <a href="{% url 'update_user' user.id %}">Edit Profile</a>
+
+        <form method="post" action="{% url 'delete_user'%}" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit">Delete Profile</button>
+        </form>
     </div>
     
 </div>

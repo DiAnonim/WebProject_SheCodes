@@ -11,6 +11,7 @@ html, body {
 }
 
 body {
+    margin-top: 60px; /* Увеличьте это значение, если высота навбара больше */
     font-family: Arial, sans-serif;
     background-color: #f0f8e0; /* Светлый зеленовато-белый фон */
     margin: 0;
@@ -291,42 +292,54 @@ header {
 
 /* Основные стили для навигационной панели */
 .darkNavbar {
-    background-color: #333; /* Темный фон панели */
-    color: #fff; /* Белый цвет текста */
+    background-color: #333; /* Темный фон */
+    color: #fff; /* Белый текст */
+    padding: 10px 20px;
     display: flex;
-    justify-content: left; /* Распределяет элементы на панели */
-    align-items: center; /* Выравнивание по вертикали */
-    padding: 10px 20px; /* Отступы */
-    position: fixed; /* Фиксированное позиционирование */
-    top: 0; /* Расположить панель вверху */
-    width: 100%; /* Ширина панели на всю ширину экрана */
-    z-index: 1000; /* Слой, чтобы панель была над другими элементами */
+    justify-content: left;
+    align-items: center;
+    position: fixed; /* Закрепляем навбар вверху страницы */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Обеспечивает, что навбар будет выше других элементов */
 }
 
-.darkNavbar #logo img {
-    height: 40px; /* Высота логотипа */
+/* Логотип */
+#logo img {
+    height: 40px; /* Размер логотипа */
 }
 
+/* Ссылки в навбаре */
 .darkNavbar a {
-    color: #fff; /* Белый цвет текста ссылок */
-    text-decoration: none; /* Убирает подчеркивание */
+    color: #fff; /* Белый цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
     margin: 0 15px; /* Отступы между ссылками */
     font-size: 16px; /* Размер шрифта */
-    transition: color 0.3s; /* Плавный переход цвета при наведении */
 }
 
-.darkNavbar a:hover {
-    color: #f39c12; /* Цвет текста при наведении (оранжевый) */
+/* Иконки */
+.darkNavbar .fa {
+    margin-right: 5px;
 }
 
-.darkNavbar .fa-user {
-    font-size: 18px; /* Размер иконки пользователя */
-    margin-left: 15px; /* Отступ перед иконкой */
+/* Кнопка выхода */
+.darkNavbar form button {
+    color: #fff; /* Белый текст на кнопке */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Курсор при наведении */
+    padding: 5px 10px; /* Отступы */
+    transition: background-color 0.3s, color 0.3s; /* Плавные изменения фона и цвета текста */
 }
 
-/* Добавьте отступ сверху на основной контент, чтобы он не перекрывался навбаром */
-body {
-    margin-top: 60px; /* Увеличьте это значение, если высота навбара больше */
+.darkNavbar form button:hover {
+    background-color: #555; /* Темно-серый фон при наведении */
+    color: #ddd; /* Светло-серый текст при наведении */
+}
+
+/* Стили для активного состояния ссылки */
+.darkNavbar a.active {
+    font-weight: bold; /* Жирный текст для активной ссылки */
 }
 
 
