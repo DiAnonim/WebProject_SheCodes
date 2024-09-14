@@ -3,8 +3,8 @@ from django.urls import reverse_lazy, reverse
 from django.views import View
 
 # from app.models import Todo, Comment
-from app.forms import UserForm, LoginForm, ShelterForm
-from app.models import CustomUser, Shelter
+from app.forms import UserForm, LoginForm, ShelterForm, CommentForm
+from app.models import CustomUser, Shelter, Comment
 
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView, DetailView, TemplateView
 from django.contrib.auth.views import LoginView, LogoutView
@@ -59,6 +59,28 @@ class LoginView(SuccessMessageMixin, LoginView):
     template_name = 'login.html'
     next_page = reverse_lazy('message')
     success_message = 'Login successfully'
+    
+    
+# Профиль
+class ProfileView(LoginRequiredMixin, DetailView):
+    model = CustomUser
+    template_name = "profile.html"
+    context_object_name = "user"
+    
+    def get_object(self):
+        return self.request.user
+    
+class UpdateUserView(LoginRequiredMixin, UpdateView):
+    model = CustomUser
+    form_class = UserForm
+    template_name = 'update_user.html'
+    success_url = reverse_lazy('message')
+    success_message = 'Profile updated successfully'
+    context_object_name = 'user'
+    
+    def get_object(self):
+        return self.request.user
+    
 
 class LogoutView(LogoutView):
     next_page = reverse_lazy('home')
@@ -75,13 +97,10 @@ class ErrorView(TemplateView):
     template_name = "error.html"
 
 
-# Профиль
-class ProfileView(LoginRequiredMixin, DetailView):
-    model = CustomUser
-    template_name = "profile.html"
-    context_object_name = "user"
     
     
+    
+# CRUD для приюта 
 class ShelterCreateView(LoginRequiredMixin, CreateView):
     model = Shelter
     form_class = ShelterForm
@@ -104,6 +123,38 @@ class ShelterDeleteView(LoginRequiredMixin, DeleteView):
     model = Shelter
     template_name = "delete_shelter.html"
     success_url = reverse_lazy('message')
+    
+# CRUD для комментариев
+
+class CommentListView(LoginRequiredMixin, ListView):
+    model = Comment
+    template_name = "comment_list.html"
+    context_object_name = "comments"
+    paginate_by = 5
+
+class CommentCreateView(LoginRequiredMixin, CreateView):
+    model = Comment
+    form_class = CommentForm
+    template_name = "create_comment.html"
+    success_url = reverse_lazy('message')
+    success_message = 'Comment created successfully'
+    
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+    
+class CommentUpdateView(LoginRequiredMixin, UpdateView):
+    model = Comment
+    form_class = CommentForm
+    template_name = "update_comment.html"
+    success_url = reverse_lazy('message')
+    
+class CommentDeleteView(LoginRequiredMixin, DeleteView):
+    model = Comment
+    template_name = "delete_comment.html"
+    success_url = reverse_lazy('message')
+    
+
     
    
 # # Задачи в home

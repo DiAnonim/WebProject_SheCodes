@@ -18,14 +18,15 @@
 </head>
 
 <body
-    style=" background-image: url('https://catherineasquithgallery.com/uploads/posts/2021-02/1612728076_170-p-cherno-goluboi-fon-246.jpg');">
+    style="background-image: url('https://catherineasquithgallery.com/uploads/posts/2021-02/1612728076_170-p-cherno-goluboi-fon-246.jpg');">
     {% include "navbar.html" %}
     <div class="base-container">
-        {% block header %}{% endblock %}
-        {% block content %}{% endblock %}
+        <div class="content">
+            {% block header %}{% endblock %}
+            {% block content %}{% endblock %}
+        </div>
     </div>
     {% include "footer.html" %}
-
 </body>
 
 </html>

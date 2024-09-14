@@ -3,23 +3,20 @@
 {% block title %}<title>Login & Signup</title>{% endblock %}
 
 {% block content %}
-<section class="wrapper">
-    <div class="form signup {% if signup_form.errors %}error{% endif %}">
+<section class="form-section">
+    <div class="form-container">
         <header>Signup</header>
-        <form method="POST">
+        <form method="POST" class="signup-form" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ signup_form.as_p }}
-            <div class="checkbox">
+            {{ form.as_p }}
+            <div class="terms-checkbox">
                 <input type="checkbox" id="signupCheck" required />
                 <label for="signupCheck">I accept all terms & conditions</label>
             </div>
-            <input type="submit" name="signup" value="Signup" />
+            <input type="submit" name="signup" value="Signup" class="submit-btn" />
         </form>
+        <p class="already-account">Already have an account? <a href="{% url 'login' %}">Login</a></p>
+
     </div>
-
-
-    <script>
-      
-    </script>
 </section>
 {% endblock %}

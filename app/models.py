@@ -9,10 +9,11 @@ class CustomUser(AbstractUser):
     class Gender(models.TextChoices):
         Man = 'Man'
         Woman =  'Woman'  
-    image=models.ImageField(upload_to='media/user_image',default="media/default.png")
+    image=models.ImageField(upload_to='images/user',default="images/user/default.png")
     gender=models.CharField(max_length=10,choices=Gender.choices,default=Gender.Man)
     birthday=models.DateField(null=True)
     phone=models.CharField(max_length=20)
+    isStudent = models.BooleanField(default=False)
     # role = models.CharField(max_length=50, choices=Role.choices, default=Role.User)
 
     def save(self, *args, **kwargs):
@@ -20,6 +21,21 @@ class CustomUser(AbstractUser):
     #         self.role = self.base_role
             return super().save(*args, **kwargs)
 
+class Post(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    image=models.ImageField(upload_to='images/post', blank=True, null=True)
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    link = models.URLField(blank=True, null=True)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE, related_name='posts', null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name = "Post"
+        verbose_name_plural = "Posts"
+        ordering = ['-created_at']
   
 class Shelter(models.Model):
     image=models.ImageField(upload_to='images/shelter', blank=True, null=True)
@@ -86,6 +102,7 @@ class Comment(models.Model):
         verbose_name_plural = "Comments"
         ordering = ['-created_at']
     
+
 class SavePost(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     animal = models.ForeignKey(Animal, on_delete=models.CASCADE)

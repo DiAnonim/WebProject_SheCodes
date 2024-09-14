@@ -4,20 +4,15 @@
 
 {% block content %}
 <section class="wrapper">
-    
-    <div class="form login {% if login_form.errors %}error{% endif %}">
+    <div>
         <header>Login</header>
         <form method="POST">
             {% csrf_token %}
-            {{ login_form.as_p }}
-            <a href="#">Forgot password?</a>
+            {{ form.as_p }}
+            <!-- <a href="#">Forgot password?</a> -->
             <input type="submit" name="login" value="Login" />
-            <input class="login-header" type="submin" name="signup" value="Signup">
         </form>
+        <p class="already-account">Don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
     </div>
-
-    <script>
-      
-    </script>
 </section>
 {% endblock %}
