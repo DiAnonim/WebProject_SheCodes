@@ -28,22 +28,12 @@ urlpatterns = [
     path('comment/delete/<int:pk>/', CommentDeleteView.as_view(), name='comment_delete'),
 
 
-<<<<<<< HEAD
-    path('admin/home/',MainView.as_view(), name='admin_home'),
-    path('admin/university/', UniversityListView.as_view(), name='admin_university_list'),
-    path('admin/mentor/', MentorListView.as_view(), name='admin_mentor_list'),
-    path('admin/categoryanimal/', CategoryAnimalListView.as_view(), name='admin_categoryanimal_list'),
-    path('admin/categorypost',PostCategoryListView.as_view(), name='admin_categorypost_list'),
-    path('admin/shelter/', ShelterListView.as_view(), name='admin_shelter_list'),
-    path('admin/animal/', AnimalListView.as_view(), name='admin_animal_list'),
-=======
-    path('customAdmin/home/',MainView.as_view(), name='admin_home'),
-    path('customAdmin/university/', UniversityListView.as_view(), name='university'),
-    
 
->>>>>>> 4755087641d59cceb1d432d082caee013110e293
-    # path('todo/create', TodoCreateView.as_view(), name='create_todo'),
-    # path('todo/detail/<int:pk>/', TodoDetailView.as_view(), name='todo_detail'),
-    # path('todo/update/<int:pk>/', TodoUpdateView.as_view(), name='todo_update'),
-    # path('todo/delete/<int:pk>/', TodoDeleteView.as_view(), name='todo_delete'),
+    path('customAdmin/home/',MainView.as_view(), name='admin_home'),
+    path('customAdmin/university/', UniversityListView.as_view(), name='admin_university_list'),
+    path('customAdmin/mentor/', MentorListView.as_view(), name='admin_mentor_list'),
+    path('customAdmin/categoryanimal/', CategoryAnimalListView.as_view(), name='admin_categoryanimal_list'),
+    path('customAdmin/categorypost',PostCategoryListView.as_view(), name='admin_categorypost_list'),
+    path('customAdmin/shelter/', ShelterListView.as_view(), name='admin_shelter_list'),
+    path('customAdmin/animal/', AnimalListView.as_view(), name='admin_animal_list'),
 ]

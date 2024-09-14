@@ -218,27 +218,4 @@ class CommentForm(forms.ModelForm):
             'text': forms.Textarea(attrs={'class': 'inputCreate', 'placeholder': 'Текст комментария'}),
         }
         
-        
     
-# class TodoForm(forms.ModelForm):
-#     class Meta:
-#         model = Todo
-#         fields = ['image', 'title', 'text', 'datecompleted', 'important', 'status', 'perform']
-#         labels = {
-#             'image': '',
-#             'title': '',
-#             'text': '',
-#             'datecompleted': '',
-#             'important': '',
-#             'status': '',
-#             'perform': '',
-#         }
-#         widgets = {
-#             'image': forms.FileInput(attrs={'class': 'inputCreate', 'placeholder': 'Изображение'}),
-#             'title': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Заголовок'}),
-#             'text': forms.Textarea(attrs={'class': 'inputCreate', 'placeholder': 'Описание'}),
-#             'datecompleted': forms.DateInput(attrs={'type': 'date', 'class': 'inputCreate', 'placeholder': 'Дата выполнения'}),
-#             'important': forms.Select(attrs={'class': 'inputCreate', 'placeholder': 'Важность'}),
-#             'status': forms.Select(attrs={'class': 'inputCreate', 'placeholder': 'Статус'}),
-#             'perform': forms.Select(attrs={'class': 'inputCreate', 'placeholder': 'Выполнено'}),
-#         }
