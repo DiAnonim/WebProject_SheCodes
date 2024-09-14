@@ -2,8 +2,8 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    # path('', TodoHomeView.as_view(), name='home'),  
-    # path('message/', MessageView.as_view(), name='message'),
+    path('', SignUpView.as_view(), name='home'),  
+    path('message/', MessageView.as_view(), name='message'),
     # path('error/', ErrorView.as_view(), name='error'),
     
     path('signup/', SignUpView.as_view(), name='signup'),
