@@ -54,12 +54,12 @@ body {
   cursor: pointer;
 }
 
-.form.login header {
+.form.login-header {
   color: #333;
   opacity: 0.6;
 }
 
-.wrapper.active .form.login header {
+.wrapper.active .form.login-header {
   opacity: 1;
 }
 
