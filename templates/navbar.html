@@ -10,5 +10,6 @@
         <a href="{% url 'login' %}">Login</a>
     {% else %}
         <a class="fa fa-user" href="{% url 'profile' user.id %}">Profile</a>
+        <a class="fa fa-sign-out" href="{% url 'logout' %}">Logout</a>
     {% endif %}
 </nav>

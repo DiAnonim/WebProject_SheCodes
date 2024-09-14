@@ -67,9 +67,6 @@ class MessageView(TemplateView):
 class ErrorView(TemplateView):
     template_name = "error.html"
 
-
-    
-    
     
 # CRUD для приюта 
 class ShelterCreateView(LoginRequiredMixin, CreateView):
