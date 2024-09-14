@@ -54,6 +54,8 @@ class LoginForm(AuthenticationForm):
         self.fields['password'].widget = forms.PasswordInput(attrs={'class': 'inputCreate', 'placeholder': 'Пароль'})
         
         self.fields['captcha'].widget.attrs.update({'class': 'inputCreate', 'placeholder': 'Введите капчу'})
+
+        
         
 # class TodoForm(forms.ModelForm):
 #     class Meta:
