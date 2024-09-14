@@ -20,6 +20,20 @@ class CustomUser(AbstractUser):
     #     if not self.pk:
     #         self.role = self.base_role
             return super().save(*args, **kwargs)
+        
+        
+class CategoryPost(models.Model):
+    name = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = "CategoryPost"
+        verbose_name_plural = "CategoryPos"
+        ordering = ['-created_at']
 
 class Post(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
@@ -27,7 +41,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     link = models.URLField(blank=True, null=True)
-    category = models.ForeignKey('Category', on_delete=models.CASCADE, related_name='posts', null=True)
+    category = models.ForeignKey(CategoryPost, on_delete=models.CASCADE, related_name='posts', null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):
@@ -85,18 +99,7 @@ class Mentor(models.Model):
         ordering = ['-created_at']
 
 
-class CategoryPost(models.Model):
-    name = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return self.name
-    
-    class Meta:
-        verbose_name = "CategoryPost"
-        verbose_name_plural = "CategoryPos"
-        ordering = ['-created_at']
 class CategoryAnimal(models.Model):
     name = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
