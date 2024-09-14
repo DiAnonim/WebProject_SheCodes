@@ -6,11 +6,11 @@ urlpatterns = [
     # path('message/', MessageView.as_view(), name='message'),
     # path('error/', ErrorView.as_view(), name='error'),
     
-    # path('signup/', SignUpView.as_view(), name='signup'),
-    # path('login/', LoginView.as_view(), name='login'),
-    # path('logout/', LogoutView.as_view(), name='logout'),
+    path('signup/', SignUpView.as_view(), name='signup'),
+    path('login/', LoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
     
-    # path('profile/detail/<int:pk>/', ProfileView.as_view(), name='profile'),
+    path('profile/detail/<int:pk>/', ProfileView.as_view(), name='profile'),
     # path('verify/<int:pk>/<str:token>/', VerifyEmailView.as_view(), name='verify'),
     
     # path('todo/create', TodoCreateView.as_view(), name='create_todo'),
