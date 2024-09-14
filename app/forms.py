@@ -1,5 +1,5 @@
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from app.models import CustomUser
+from app.models import CustomUser, Shelter, Comment
 from django import forms
 from captcha.fields import CaptchaField
 
@@ -20,10 +20,10 @@ class UserForm(UserCreationForm):
     class Meta:
         model = CustomUser
         
-        fields = ['Image','first_name', 'last_name', 'birthday', 'email', 'gender', 'phone', 'username', 'password1', 'password2', ]
+        fields = ['image','first_name', 'last_name', 'birthday', 'email', 'gender', 'phone', 'username', 'password1', 'password2', ]
         
         labels = {
-            'Image': '',
+            'image': '',
             'first_name': '',
             'last_name': '',
             'birthday': '',
@@ -48,7 +48,7 @@ class UserForm(UserCreationForm):
         }
         
         widgets = {
-            'Image': forms.FileInput(attrs={'class': 'inputCreate', 'placeholder': 'Фото'}),
+            'image': forms.FileInput(attrs={'class': 'inputCreate', 'placeholder': 'Фото'}),
             'first_name': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Имя'}),
             'last_name': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Фамилия'}),
             'birthday': forms.DateInput(attrs={'class': 'inputCreate', 'placeholder': 'День рождения', 'type': 'date'}),
@@ -72,8 +72,42 @@ class LoginForm(AuthenticationForm):
         
         self.fields['captcha'].widget.attrs.update({'class': 'inputCreate', 'placeholder': 'Введите капчу'})
 
-
+class ShelterForm(forms.ModelForm):
+    class Meta:
+        model = Shelter
         
+        fields = ['image', 'name', 'address', 'city', 'phoneNumber', 'description']
+        
+        labels = {
+            'image': '',
+            'name': '',
+            'address': '',
+            'city': '',
+            'phoneNumber': '',
+            'description': '',
+        }
+        
+        widgets = {
+            'image': forms.FileInput(attrs={'class': 'inputCreate', 'placeholder': 'Изображение'}),
+            'name': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Название'}),
+            'address': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Адрес'}),
+            'city': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Город'}),
+            'phoneNumber': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Телефон'}),
+            'description': forms.Textarea(attrs={'class': 'inputCreate', 'placeholder': 'Описание'}),
+        }
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['text']
+        labels = {
+            'text': '',
+        }
+        widgets = {
+            'text': forms.Textarea(attrs={'class': 'inputCreate', 'placeholder': 'Текст комментария'}),
+        }
+            
 # class TodoForm(forms.ModelForm):
 #     class Meta:
 #         model = Todo

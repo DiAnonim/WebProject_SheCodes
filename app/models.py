@@ -9,7 +9,7 @@ class CustomUser(AbstractUser):
     class Gender(models.TextChoices):
         Man = 'Man'
         Woman =  'Woman'  
-    Image=models.ImageField(upload_to='media/user_image',default="media/default.png")
+    image=models.ImageField(upload_to='media/user_image',default="media/default.png")
     gender=models.CharField(max_length=10,choices=Gender.choices,default=Gender.Man)
     birthday=models.DateField(null=True)
     phone=models.CharField(max_length=20)

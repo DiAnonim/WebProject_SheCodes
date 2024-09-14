@@ -3,8 +3,8 @@ from django.urls import reverse_lazy, reverse
 from django.views import View
 
 # from app.models import Todo, Comment
-from app.forms import UserForm, LoginForm
-from app.models import CustomUser
+from app.forms import UserForm, LoginForm, ShelterForm
+from app.models import CustomUser, Shelter
 
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView, DetailView, TemplateView
 from django.contrib.auth.views import LoginView, LogoutView
@@ -80,6 +80,30 @@ class ProfileView(LoginRequiredMixin, DetailView):
     model = CustomUser
     template_name = "profile.html"
     context_object_name = "user"
+    
+    
+class ShelterCreateView(LoginRequiredMixin, CreateView):
+    model = Shelter
+    form_class = ShelterForm
+    template_name = "create_shelter.html"
+    success_url = reverse_lazy('message')
+    success_message = 'Shelter created successfully'
+    
+class ShelterDetailView(LoginRequiredMixin, DetailView):
+    model = Shelter
+    template_name = "shelter_detail.html"
+    context_object_name = "shelter"
+    
+class ShelterUpdateView(LoginRequiredMixin, UpdateView):
+    model = Shelter
+    form_class = ShelterForm
+    template_name = "update_shelter.html"
+    success_url = reverse_lazy('message')
+    
+class ShelterDeleteView(LoginRequiredMixin, DeleteView):
+    model = Shelter
+    template_name = "delete_shelter.html"
+    success_url = reverse_lazy('message')
     
    
 # # Задачи в home
