@@ -6,17 +6,21 @@ from captcha.fields import CaptchaField
 # from .models import Todo, Comment
 
 class UserForm(UserCreationForm):
-    
+
     def __init__(self, *args, **kwargs):
         super(UserForm, self).__init__(*args, **kwargs)
         self.fields['password1'].label = ""
         self.fields['password1'].help_text = ""
-        self.fields['password1'].widget = forms.PasswordInput(attrs={'class': 'inputCreate', 'placeholder': 'Пароль'})
+        self.fields['password1'].widget = forms.PasswordInput(attrs={
+            'placeholder': 'Пароль', 'class': 'form-control'
+        })
         
         self.fields['password2'].label = ""
         self.fields['password2'].help_text = ""
-        self.fields['password2'].widget = forms.PasswordInput(attrs={'class': 'inputCreate', 'placeholder': 'Повторите пароль'})
-        
+        self.fields['password2'].widget = forms.PasswordInput(attrs={
+            'placeholder': 'Повторите пароль', 'class': 'form-control'
+        })
+
     class Meta:
         model = CustomUser
         
@@ -31,8 +35,6 @@ class UserForm(UserCreationForm):
             'gender': '',
             'phone': '',
             'username': '',
-            'password1': '',
-            'password2': '',
         }
        
         help_texts = {
@@ -43,21 +45,19 @@ class UserForm(UserCreationForm):
             'gender': '',
             'phone': '',
             'username': '',
-            'password1': '',
-            'password2': '',
         }
         
         widgets = {
-            'image': forms.FileInput(attrs={'class': 'inputCreate', 'placeholder': 'Фото'}),
-            'first_name': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Имя'}),
-            'last_name': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Фамилия'}),
-            'birthday': forms.DateInput(attrs={'class': 'inputCreate', 'placeholder': 'День рождения', 'type': 'date'}),
-            'gender': forms.Select(attrs={'class': 'inputCreate', 'placeholder': 'Пол'}),
-            'email': forms.EmailInput(attrs={'class': 'inputCreate', 'placeholder': 'Email'}),
-            'gender': forms.Select(attrs={'class': 'inputCreate', 'placeholder': 'Пол'}),
-            'phone': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Телефон'}),
-            'username': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Username/Логин'}),
+            'image': forms.FileInput(attrs={'class': 'form-control-file', 'placeholder': 'Фото'}),
+            'first_name': forms.TextInput(attrs={'placeholder': 'Имя', 'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'placeholder': 'Фамилия', 'class': 'form-control'}),
+            'birthday': forms.DateInput(attrs={'placeholder': 'День рождения', 'type': 'date', 'class': 'form-control'}),
+            'gender': forms.Select(attrs={'class': 'form-select'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'Email', 'class': 'form-control'}),
+            'phone': forms.TextInput(attrs={'placeholder': 'Телефон', 'class': 'form-control'}),
+            'username': forms.TextInput(attrs={'placeholder': 'Username/Логин', 'class': 'form-control'}),
         }
+
         
 class LoginForm(AuthenticationForm):
     captcha = CaptchaField(label='', error_messages={'invalid': 'Неверная капча'})
@@ -100,13 +100,13 @@ class UniversityForm(forms.ModelForm):
     class Meta:
         model = University
 
-        fields = ['image', 'name', 'website', 'phoneNumber', 'description']
+        fields = ['image', 'name', 'website', 'phone_number']
 
         labels = {
             'image': '',
             'name': '',
             'website': '',
-            'phoneNumber': '',
+            'phone_number': '',
        
         }
 
@@ -114,7 +114,7 @@ class UniversityForm(forms.ModelForm):
             'image': forms.FileInput(attrs={'class': 'inputCreate', 'placeholder': 'Изображение'}),
             'name': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Название'}),
             'website': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Сайт'}),
-            'phoneNumber': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Телефон'}),
+            'phone_number': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Телефон'}),
             
         }
 
@@ -217,7 +217,9 @@ class CommentForm(forms.ModelForm):
         widgets = {
             'text': forms.Textarea(attrs={'class': 'inputCreate', 'placeholder': 'Текст комментария'}),
         }
-            
+        
+        
+    
 # class TodoForm(forms.ModelForm):
 #     class Meta:
 #         model = Todo
