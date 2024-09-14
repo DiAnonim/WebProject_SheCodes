@@ -52,8 +52,19 @@ class UpdateUserView(LoginRequiredMixin, UpdateView):
     def get_object(self):
         return self.request.user
     
+    
+class DeleteUserView(LoginRequiredMixin, DeleteView):
+    model = CustomUser
+    template_name = 'delete_user.html'
+    success_url = reverse_lazy('message')
+    success_message = 'Profile deleted successfully'
+    context_object_name = 'user'
+    
+    def get_object(self):
+        return self.request.user
+    
 
-class LogoutView(LogoutView):
+class CustomLogoutView(LogoutView):
     next_page = reverse_lazy('home')
     
 

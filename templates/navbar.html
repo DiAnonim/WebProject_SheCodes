@@ -2,7 +2,7 @@
 
 <nav class="darkNavbar zilla-slab-light-italic">
     <div id="logo">
-        <img src="{% static 'images/logo3.png' %}" alt="Logo">
+        <img src="{% static 'images/logo/logo.png' %}" alt="Logo">
     </div>
     <a href="{% url 'home' %}">Home</a>
     {% if not request.user.is_authenticated %}
@@ -10,6 +10,9 @@
         <a href="{% url 'login' %}">Login</a>
     {% else %}
         <a class="fa fa-user" href="{% url 'profile' user.id %}">Profile</a>
-        <a class="fa fa-sign-out" href="{% url 'logout' %}">Logout</a>
+        <form method="post" action="{% url 'logout' %}" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" class="fa fa-sign-out" style="background: none; border: none; cursor: pointer;">Logout</button>
+        </form>
     {% endif %}
 </nav>
