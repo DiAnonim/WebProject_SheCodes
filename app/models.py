@@ -73,8 +73,6 @@ class Comment(models.Model):
         verbose_name_plural = "Comments"
         ordering = ['-created_at']
     
-
-    
 class SavePost(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     animal = models.ForeignKey(Animal, on_delete=models.CASCADE)
