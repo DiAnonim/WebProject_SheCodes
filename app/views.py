@@ -3,8 +3,8 @@ from django.urls import reverse_lazy, reverse
 from django.views import View
 
 # from app.models import Todo, Comment
-from app.forms import UserForm, LoginForm, ShelterForm
-from app.models import CustomUser, Shelter
+from app.forms import UserForm, LoginForm, ShelterForm,AnimalForm,UniversityForm,MentorForm,CategoryAnimalForm,CategoryPostForm
+from app.models import CustomUser, Shelter,Animal,University,Mentor,CategoryAnimal,CategoryPost
 
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView, DetailView, TemplateView
 from django.contrib.auth.views import LoginView, LogoutView
@@ -104,8 +104,110 @@ class ShelterDeleteView(LoginRequiredMixin, DeleteView):
     model = Shelter
     template_name = "delete_shelter.html"
     success_url = reverse_lazy('message')
-    
-   
+
+class MainView(TemplateView):
+    template_name = "admin/main.html"
+#Животные 
+class AnimalCreateView(CreateView):
+    model = Animal 
+    form_class = AnimalForm
+    template_name = "create_animal.html"
+    success_url = reverse_lazy('message')
+    success_message = 'Animal created successfully'
+
+class AnimalDeleteView(DeleteView):
+    model = Animal
+    template_name = "delete_animal.html"
+    success_url = reverse_lazy('message')
+
+class AnimalUpdateView(UpdateView):
+    model = Animal
+    template_name = "update_animal.html"
+    form_class = AnimalForm
+    success_url = reverse_lazy('message')
+
+class AnimalDetailView(DetailView):
+    model = Animal
+    template_name = "animal_detail.html"
+    context_object_name = "animal"
+
+#Университеты
+class UniversityListView(ListView):
+    model = University
+    template_name = "admin/university.html"
+    context_object_name = "universities"
+
+
+class UniversityCreateView(CreateView):
+    model = University
+    form_class = UniversityForm
+    template_name = "create_university.html"
+    success_url = reverse_lazy('message')
+    success_message = 'University created successfully'
+
+class UniversityDeleteView(DeleteView):
+    model = University
+    template_name = "delete_university.html"
+    success_url = reverse_lazy('message')
+
+class UniversityUpdateView(UpdateView):
+    model = University
+    template_name = "update_university.html"
+    form_class = UniversityForm
+    success_url = reverse_lazy('message')
+
+class UniversityDetailView(DetailView):
+    model = University
+    template_name = "university_detail.html"
+    context_object_name = "university"
+
+#Менторы
+class MentorCreateView(CreateView):
+    model = Mentor
+    form_class = MentorForm
+    template_name = "create_mentor.html"
+    success_url = reverse_lazy('message')
+    success_message = 'Mentor created successfully'
+
+class MentorDeleteView(DeleteView):
+    model = Mentor
+    template_name = "delete_mentor.html"
+    success_url = reverse_lazy('message')
+
+class MentorUpdateView(UpdateView):
+    model = Mentor
+    form_class = MentorForm
+    template_name = "update_mentor.html"
+    success_url = reverse_lazy('message')
+
+class MentorDetailView(DetailView):
+    model = Mentor
+    template_name = "mentor_detail.html"
+    context_object_name = "mentor"
+
+class CategoryAnimalCreateView(CreateView):
+    model = CategoryAnimal
+    form_class = CategoryAnimalForm
+    template_name = "create_category_animal.html"
+    success_url = reverse_lazy('message')
+    success_message = 'Category created successfully'
+
+class CategoryAnimalDeleteView(DeleteView):
+    model = CategoryAnimal
+    template_name = "delete_category_animal.html"
+    success_url = reverse_lazy('message')
+
+class CategoryAnimalUpdateView(UpdateView):
+    model = CategoryAnimal
+    form_class = CategoryAnimalForm
+    template_name = "update_category_animal.html"
+    success_url = reverse_lazy('message')
+
+class CategoryAnimalDetailView(DetailView):
+    model = CategoryAnimal
+    template_name = "category_animal_detail.html"
+    context_object_name = "category_animal"
+#
 # # Задачи в home
 # class TodoHomeView(ListView):
 #     model = Todo
