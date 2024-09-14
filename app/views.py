@@ -125,7 +125,7 @@ class CommentDeleteView(LoginRequiredMixin, DeleteView):
 
 
 class MainView(TemplateView):
-    template_name = "admin/main.html"
+    template_name = "customAdmin/main.html"
     
 #Животные 
 class AnimalCreateView(CreateView):
@@ -154,7 +154,7 @@ class AnimalDetailView(DetailView):
 #Университеты
 class UniversityListView(ListView):
     model = University
-    template_name = "admin/university.html"
+    template_name = "customAdmin/university.html"
     context_object_name = "universities"
 
 
