@@ -20,10 +20,15 @@ urlpatterns = [
     path('shelter/update/<int:pk>/', ShelterUpdateView.as_view(), name='shelter_update'),
     path('shelter/delete/<int:pk>/', ShelterDeleteView.as_view(), name='shelter_delete'),
 
+
     path('comment/list/', CommentListView.as_view(), name='comment_list'),
     path('comment/create/', CommentCreateView.as_view(), name='create_comment'),
     path('comment/update/<int:pk>/', CommentUpdateView.as_view(), name='comment_update'),
     path('comment/delete/<int:pk>/', CommentDeleteView.as_view(), name='comment_delete'),
+
+    path('admin/home/',MainView.as_view(), name='admin_home'),
+    path('admin/university/', UniversityListView.as_view(), name='university'),
+    
 
     # path('todo/create', TodoCreateView.as_view(), name='create_todo'),
     # path('todo/detail/<int:pk>/', TodoDetailView.as_view(), name='todo_detail'),

@@ -54,15 +54,58 @@ class Shelter(models.Model):
         verbose_name_plural = "Shelters"
         ordering = ['-created_at']
 
-class Category(models.Model):
+class University(models.Model):
+    image=models.ImageField(upload_to='images/university', blank=True, null=True)
+    name = models.TextField()
+    website =models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=20)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = "University"
+        verbose_name_plural = "Universities"
+        ordering = ['-created_at']
+
+class Mentor(models.Model):
+    image=models.ImageField(upload_to='images/mentor', blank=True, null=True)
+    name = models.TextField()
+    surname = models.TextField()
+    email= models.EmailField()
+    typeOfActivity = models.TextField()
+    phone_number = models.CharField(max_length=20)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = "Mentor"
+        verbose_name_plural = "Mentors"
+        ordering = ['-created_at']
+
+
+class CategoryPost(models.Model):
+    name = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = "CategoryPost"
+        verbose_name_plural = "CategoryPos"
+        ordering = ['-created_at']
+class CategoryAnimal(models.Model):
     name = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):
         return self.name
     class Meta:
-        verbose_name = "Category"
-        verbose_name_plural = "Categories"
+        verbose_name = "CategoryAnimal"
+        verbose_name_plural = "CategoryAnimals"
         ordering = ['-created_at']
     
 class Animal(models.Model): 
@@ -71,7 +114,8 @@ class Animal(models.Model):
         Woman =  'female'  
     image=models.ImageField(upload_to='images/animals', blank=True, null=True)
     name=models.CharField(max_length=100)
-    category=models.ForeignKey(Category, on_delete=models.CASCADE)
+    category=models.ForeignKey(CategoryAnimal, on_delete=models.CASCADE)
+    categoryPost=models.ForeignKey(CategoryPost, on_delete=models.CASCADE)
     shelter=models.ForeignKey(Shelter, on_delete=models.CASCADE) 
     breed=models.CharField(max_length=100) 
     gender=models.CharField(max_length=10,choices=Gender.choices,default=Gender.Man)
