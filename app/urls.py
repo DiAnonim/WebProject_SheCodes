@@ -26,6 +26,7 @@ urlpatterns = [
     path('comment/update/<int:pk>/', CommentUpdateView.as_view(), name='comment_update'),
     path('comment/delete/<int:pk>/', CommentDeleteView.as_view(), name='comment_delete'),
 
+
     path('admin/home/',MainView.as_view(), name='admin_home'),
     path('admin/university/', UniversityListView.as_view(), name='admin_university_list'),
     path('admin/mentor/', MentorListView.as_view(), name='admin_mentor_list'),
