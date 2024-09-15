@@ -18,24 +18,22 @@ urlpatterns = [
     
     # path('verify/<int:pk>/<str:token>/', VerifyEmailView.as_view(), name='verify'),
 
-    path('shelter/create/', ShelterCreateView.as_view(), name='create_shelter'),
-    path('shelter/detail/<int:pk>/', ShelterDetailView.as_view(), name='shelter_detail'),
-    path('shelter/update/<int:pk>/', ShelterUpdateView.as_view(), name='shelter_update'),
-    path('shelter/delete/<int:pk>/', ShelterDeleteView.as_view(), name='shelter_delete'),
+    # path('shelter/create/', ShelterCreateView.as_view(), name='create_shelter'),
+    # path('shelter/detail/<int:pk>/', ShelterDetailView.as_view(), name='shelter_detail'),
+    # path('shelter/update/<int:pk>/', ShelterUpdateView.as_view(), name='shelter_update'),
+    # path('shelter/delete/<int:pk>/', ShelterDeleteView.as_view(), name='shelter_delete'),
 
 
-    path('comment/list/', CommentListView.as_view(), name='comment_list'),
-    path('comment/create/', CommentCreateView.as_view(), name='create_comment'),
-    path('comment/update/<int:pk>/', CommentUpdateView.as_view(), name='comment_update'),
-    path('comment/delete/<int:pk>/', CommentDeleteView.as_view(), name='comment_delete'),
-
-
+    # path('comment/list/', CommentListView.as_view(), name='comment_list'),
+    # path('comment/create/', CommentCreateView.as_view(), name='create_comment'),
+    # path('comment/update/<int:pk>/', CommentUpdateView.as_view(), name='comment_update'),
+    # path('comment/delete/<int:pk>/', CommentDeleteView.as_view(), name='comment_delete'),
 
     path('customAdmin/home/',MainView.as_view(), name='admin_home'),
-    path('customAdmin/university/', UniversityListView.as_view(), name='admin_university_list'),
-    path('customAdmin/mentor/', MentorListView.as_view(), name='admin_mentor_list'),
-    path('customAdmin/categoryanimal/', CategoryAnimalListView.as_view(), name='admin_categoryanimal_list'),
-    path('customAdmin/categorypost',PostCategoryListView.as_view(), name='admin_categorypost_list'),
-    path('customAdmin/shelter/', ShelterListView.as_view(), name='admin_shelter_list'),
-    path('customAdmin/animal/', AnimalListView.as_view(), name='admin_animal_list'),
+    path('customAdmin/university/', UniversityListViewAdmin.as_view(), name='admin_university_list'),
+    path('customAdmin/mentor/', MentorListViewAdmin.as_view(), name='admin_mentor_list'),
+    path('customAdmin/categoryanimal/', CategoryAnimalListViewAdmin.as_view(), name='admin_categoryanimal_list'),
+    path('customAdmin/categorypost',PostCategoryListViewAdmin.as_view(), name='admin_categorypost_list'),
+    path('customAdmin/shelter/', ShelterListViewAdmin.as_view(), name='admin_shelter_list'),
+    path('customAdmin/animal/', AnimalListViewAdmin.as_view(), name='admin_animal_list'),
 ]
