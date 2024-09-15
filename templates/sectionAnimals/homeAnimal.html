@@ -4,7 +4,7 @@
 {% block title %}<title>Animals Looking for a Home</title>{% endblock %}
 
 {% block content %}
-<section class="home" id="home">
+<section class="homeAnimal" id="home">
     <div class="content">
         <h3>Animals Looking <br> for a Home</h3>
         <a href="{% url 'create_animal' %}" class="btn btn-info">Create Animal</a>
@@ -28,7 +28,7 @@
     </div>
 </section>
 
-<div class="animal-list">
+<div class="animal-list">   
     {% for animal in animals %}
     <div class="animal-card">
         <div class="animal-header">

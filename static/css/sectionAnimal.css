@@ -84,7 +84,7 @@ section{
 
 /* home */
 
-.home{
+.homeAnimal{
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -94,14 +94,14 @@ section{
 }
 
 
-.home .content h3{
+.homeAnimal .content h3{
   color: var(--white);
   font-size: 6rem;
   line-height: 1.4;
   font-weight: 400;
 }
 
-.home .wave{
+.homeAnimal .wave{
   position: absolute;
   bottom: -10%; left: 0;
   width: 100%;

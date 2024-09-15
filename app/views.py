@@ -170,7 +170,7 @@ class CommentDeleteView(LoginRequiredMixin, DeleteView):
 #Животные 
 class AnimalListView(ListView):
     model = Animal
-    template_name = "sectionAnimals/home.html"
+    template_name = "sectionAnimals/homeAnimal.html"
     context_object_name = "animals"
     
 class AnimalCreateView(CreateView):
