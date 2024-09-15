@@ -58,6 +58,27 @@ class UserForm(UserCreationForm):
             'username': forms.TextInput(attrs={'placeholder': 'Username/Логин', 'class': 'form-control'}),
         }
 
+
+class UpdateUserForm(forms.ModelForm):
+    class Meta:
+        model = CustomUser
+        fields = ['username', 'email', 'first_name', 'last_name']
+
+        labels = {
+            'first_name': '',
+            'last_name': '',
+            'email': '',
+            'username': '',
+        }
+        
+        widgets = {
+            'first_name': forms.TextInput(attrs={'placeholder': 'Имя', 'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'placeholder': 'Фамилия', 'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'Email', 'class': 'form-control'}),
+            'username': forms.TextInput(attrs={'placeholder': 'Username/Логин', 'class': 'form-control'}),
+        }
+        
+        
         
 class LoginForm(AuthenticationForm):
     captcha = CaptchaField(label='', error_messages={'invalid': 'Неверная капча'})

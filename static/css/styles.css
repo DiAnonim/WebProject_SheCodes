@@ -1,5 +1,5 @@
-
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
 }
@@ -11,9 +11,11 @@ html, body {
 }
 
 body {
-    margin-top: 60px; /* Увеличьте это значение, если высота навбара больше */
+    margin-top: 60px;
+    /* Увеличьте это значение, если высота навбара больше */
     font-family: Arial, sans-serif;
-    background-color: #f0f8e0; /* Светлый зеленовато-белый фон */
+    background-color: #f0f8e0;
+    /* Светлый зеленовато-белый фон */
     margin: 0;
     padding: 0;
     align-items: center;
@@ -26,16 +28,20 @@ header {
 }
 
 .content {
-    flex: 1; /* Растягивает содержимое, чтобы занять доступное пространство */
-    padding-top: 60px; /* Отступ сверху для учёта высоты навбара */
-    padding-bottom: 60px; /* Отступ снизу для учёта высоты футера */
+    flex: 1;
+    /* Растягивает содержимое, чтобы занять доступное пространство */
+    padding-top: 60px;
+    /* Отступ сверху для учёта высоты навбара */
+    padding-bottom: 60px;
+    /* Отступ снизу для учёта высоты футера */
 }
 
 .base-container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-bottom: 60px; /* Отступ для футера */
+    padding-bottom: 60px;
+    /* Отступ для футера */
 }
 
 .form-section {
@@ -55,7 +61,8 @@ header {
 .form-container header {
     font-size: 24px;
     font-weight: bold;
-    color: #ff9800; /* Оранжевый цвет заголовка */
+    color: #ff9800;
+    /* Оранжевый цвет заголовка */
     margin-bottom: 20px;
 }
 
@@ -71,7 +78,8 @@ header {
 .signup-form input[type="date"] {
     width: 90%;
     padding: 10px;
-    border: 1px solid #8bc34a; /* Зеленая рамка */
+    border: 1px solid #8bc34a;
+    /* Зеленая рамка */
     border-radius: 5px;
     margin-bottom: 10px;
     background-color: #fff;
@@ -80,14 +88,18 @@ header {
 /* Стили для поля выбора пола */
 .signup-form select {
     /* background-color: #ffeb3b; Желтый фон для выбора пола */
-    color: #333; /* Темный текст */
+    color: #333;
+    /* Темный текст */
 }
 
 /* Стили для поля даты рождения */
 .signup-form input[type="date"] {
-    background-color: #fff; /* Белый фон */
-    color: #333; /* Темный текст */
-    border: 1px solid #8bc34a; /* Зеленая рамка */
+    background-color: #fff;
+    /* Белый фон */
+    color: #333;
+    /* Темный текст */
+    border: 1px solid #8bc34a;
+    /* Зеленая рамка */
 }
 
 .terms-checkbox {
@@ -98,7 +110,8 @@ header {
 .submit-btn {
     width: 100%;
     padding: 10px;
-    background-color: #ff9800; /* Оранжевая кнопка */
+    background-color: #ff9800;
+    /* Оранжевая кнопка */
     border: none;
     color: white;
     font-size: 16px;
@@ -108,27 +121,32 @@ header {
 }
 
 .submit-btn:hover {
-    background-color: #f57c00; /* Темно-оранжевый цвет при наведении */
+    background-color: #f57c00;
+    /* Темно-оранжевый цвет при наведении */
 }
 
 /* Стили для блока текста */
 .already-account {
     font-size: 14px;
-    color: #8bc34a; /* Зеленый цвет для текста */
+    color: #8bc34a;
+    /* Зеленый цвет для текста */
     margin-top: 20px;
-    text-align: center; /* Центрируем текст */
+    text-align: center;
+    /* Центрируем текст */
 }
 
 /* Стили для ссылки Login */
 .already-account a {
-    color: #ff9800; /* Оранжевый цвет для ссылки */
+    color: #ff9800;
+    /* Оранжевый цвет для ссылки */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .already-account a:hover {
-    color: #f57c00; /* Темно-оранжевый цвет при наведении */
+    color: #f57c00;
+    /* Темно-оранжевый цвет при наведении */
 }
 
 
@@ -139,7 +157,8 @@ header {
 
 .base-header {
     font-size: 24px;
-    color: #4caf50; /* Зеленый цвет */
+    color: #4caf50;
+    /* Зеленый цвет */
 }
 
 .profile-container {
@@ -193,25 +212,30 @@ header {
 }
 
 .btn-primary {
-    background-color: #4caf50; /* Зеленый цвет */
+    background-color: #4caf50;
+    /* Зеленый цвет */
 }
 
 .btn-primary:hover {
-    background-color: #388e3c; /* Темно-зеленый при наведении */
+    background-color: #388e3c;
+    /* Темно-зеленый при наведении */
 }
 
 .btn-secondary {
-    background-color: #2196f3; /* Синий цвет */
+    background-color: #2196f3;
+    /* Синий цвет */
 }
 
 .btn-secondary:hover {
-    background-color: #1976d2; /* Темно-синий при наведении */
+    background-color: #1976d2;
+    /* Темно-синий при наведении */
 }
 
 
 /* Основные стили для страницы логина */
 .wrapper {
-    background-color: #fffde7; /* Мягкий бело-желтый цвет для фона */
+    background-color: #fffde7;
+    /* Мягкий бело-желтый цвет для фона */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 100%;
@@ -225,7 +249,8 @@ header {
 .wrapper header {
     font-size: 24px;
     font-weight: bold;
-    color: #ff9800; /* Оранжевый для заголовка */
+    color: #ff9800;
+    /* Оранжевый для заголовка */
     margin-bottom: 20px;
 }
 
@@ -247,7 +272,8 @@ header {
 .wrapper input[type="submit"] {
     width: 100%;
     padding: 10px;
-    background-color: #4caf50; /* Зеленый цвет кнопки */
+    background-color: #4caf50;
+    /* Зеленый цвет кнопки */
     border: none;
     color: white;
     font-size: 16px;
@@ -257,65 +283,80 @@ header {
 }
 
 .wrapper input[type="submit"]:hover {
-    background-color: #388e3c; /* Темно-зеленый при наведении */
+    background-color: #388e3c;
+    /* Темно-зеленый при наведении */
 }
 
 /* Стили для ссылки Forgot password? */
 .wrapper a {
-    color: #ff9800; /* Оранжевый цвет для ссылки */
+    color: #ff9800;
+    /* Оранжевый цвет для ссылки */
     text-decoration: none;
     margin-bottom: 15px;
 }
 
 .wrapper a:hover {
-    color: #f57c00; /* Более темный оранжевый при наведении */
+    color: #f57c00;
+    /* Более темный оранжевый при наведении */
 }
 
 .wrapper .already-account {
     font-size: 14px;
-    color: #8bc34a; /* Зеленый цвет для текста */
+    color: #8bc34a;
+    /* Зеленый цвет для текста */
     margin-top: 20px;
 }
 
 /* Стили для ссылки Login в блоке already-account */
 .wrapper .already-account a {
-    color: #ff9800; /* Оранжевый для ссылки */
+    color: #ff9800;
+    /* Оранжевый для ссылки */
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .wrapper .already-account a:hover {
-    color: #f57c00; /* Темно-оранжевый при наведении */
+    color: #f57c00;
+    /* Темно-оранжевый при наведении */
 }
 
 
 /* Основные стили для навигационной панели */
 .darkNavbar {
-    background-color: #333; /* Темный фон */
-    color: #fff; /* Белый текст */
+    background-color: #333;
+    /* Темный фон */
+    color: #fff;
+    /* Белый текст */
     padding: 10px 20px;
     display: flex;
     justify-content: left;
     align-items: center;
-    position: fixed; /* Закрепляем навбар вверху страницы */
+    position: fixed;
+    /* Закрепляем навбар вверху страницы */
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1000; /* Обеспечивает, что навбар будет выше других элементов */
+    z-index: 1000;
+    /* Обеспечивает, что навбар будет выше других элементов */
 }
 
 /* Логотип */
 #logo img {
-    height: 40px; /* Размер логотипа */
+    height: 40px;
+    /* Размер логотипа */
 }
 
 /* Ссылки в навбаре */
 .darkNavbar a {
-    color: #fff; /* Белый цвет текста */
-    text-decoration: none; /* Убираем подчеркивание */
-    margin: 0 15px; /* Отступы между ссылками */
-    font-size: 16px; /* Размер шрифта */
+    color: #fff;
+    /* Белый цвет текста */
+    text-decoration: none;
+    /* Убираем подчеркивание */
+    margin: 0 15px;
+    /* Отступы между ссылками */
+    font-size: 16px;
+    /* Размер шрифта */
 }
 
 /* Иконки */
@@ -325,21 +366,29 @@ header {
 
 /* Кнопка выхода */
 .darkNavbar form button {
-    color: #fff; /* Белый текст на кнопке */
-    font-size: 16px; /* Размер шрифта */
-    cursor: pointer; /* Курсор при наведении */
-    padding: 5px 10px; /* Отступы */
-    transition: background-color 0.3s, color 0.3s; /* Плавные изменения фона и цвета текста */
+    color: #fff;
+    /* Белый текст на кнопке */
+    font-size: 16px;
+    /* Размер шрифта */
+    cursor: pointer;
+    /* Курсор при наведении */
+    padding: 5px 10px;
+    /* Отступы */
+    transition: background-color 0.3s, color 0.3s;
+    /* Плавные изменения фона и цвета текста */
 }
 
 .darkNavbar form button:hover {
-    background-color: #555; /* Темно-серый фон при наведении */
-    color: #ddd; /* Светло-серый текст при наведении */
+    background-color: #555;
+    /* Темно-серый фон при наведении */
+    color: #ddd;
+    /* Светло-серый текст при наведении */
 }
 
 /* Стили для активного состояния ссылки */
 .darkNavbar a.active {
-    font-weight: bold; /* Жирный текст для активной ссылки */
+    font-weight: bold;
+    /* Жирный текст для активной ссылки */
 }
 
 
@@ -351,69 +400,158 @@ header {
 }
 
 #footer {
-    background-color: #e8f5e9; /* Светлый зелёный фон */
-    color: #2e7d32; /* Тёмно-зелёный цвет текста */
-    padding: 20px 0; /* Отступы сверху и снизу */
-    text-align: center; /* Центрирование текста */
-    border-top: 1px solid #a5d6a7; /* Светло-зелёная линия сверху футера */
+    background-color: #e8f5e9;
+    /* Светлый зелёный фон */
+    color: #2e7d32;
+    /* Тёмно-зелёный цвет текста */
+    padding: 20px 0;
+    /* Отступы сверху и снизу */
+    text-align: center;
+    /* Центрирование текста */
+    border-top: 1px solid #a5d6a7;
+    /* Светло-зелёная линия сверху футера */
     display: flex;
 }
 
-.section1Footer, .section2Footer {
+.section1Footer,
+.section2Footer {
     margin: 0 auto;
     max-width: 800px;
     padding: 0;
 }
 
-.section1Footer ul, .section2Footer ul {
-    list-style: none; /* Убираем маркеры списка */
+.section1Footer ul,
+.section2Footer ul {
+    list-style: none;
+    /* Убираем маркеры списка */
     padding: 0;
     margin: 0;
 }
 
-.section1Footer p, .section2Footer p {
+.section1Footer p,
+.section2Footer p {
     font-size: 16px;
     font-weight: bold;
-    color: #388e3c; /* Средний зелёный цвет для заголовков секций */
+    color: #388e3c;
+    /* Средний зелёный цвет для заголовков секций */
     margin-bottom: 10px;
 }
 
-.section1Footer li, .section2Footer li {
+.section1Footer li,
+.section2Footer li {
     font-size: 14px;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
-    color: #2e7d32; /* Тёмно-зелёный цвет для текста списка */
+    color: #2e7d32;
+    /* Тёмно-зелёный цвет для текста списка */
 }
 
-.section1Footer .fas, .section2Footer .fab {
+.section1Footer .fas,
+.section2Footer .fab {
     margin-right: 10px;
     font-size: 18px;
-    color: #4caf50; /* Зелёный цвет иконок */
+    color: #4caf50;
+    /* Зелёный цвет иконок */
 }
 
 .section2Footer a {
-    color: #e58735; /* Средний зелёный цвет ссылок */
+    color: #e58735;
+    /* Средний зелёный цвет ссылок */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .section2Footer a:hover {
-    color: #2e7d32; /* Тёмно-зелёный цвет при наведении */
+    color: #2e7d32;
+    /* Тёмно-зелёный цвет при наведении */
 }
 
 .aHover {
     font-size: 14px;
     margin-top: 20px;
-    color: #2e7d32; /* Тёмно-зелёный цвет текста */
+    color: #2e7d32;
+    /* Тёмно-зелёный цвет текста */
 }
 
 .aHover a {
-    color: #e58735; /* Средний зелёный цвет для ссылок */
+    color: #e58735;
+    /* Средний зелёный цвет для ссылок */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .aHover a:hover {
-    color: #2e7d32; /* Тёмно-зелёный цвет при наведении */
+    color: #2e7d32;
+    /* Тёмно-зелёный цвет при наведении */
+}
+
+.animal-list {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+h1 {
+    text-align: center;
+    color: #4CAF50; /* Green tone */
+    margin-bottom: 30px;
+}
+
+.animal-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+}
+
+.animal-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.animal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.animal-header h3 {
+    color: #ff9800; /* Orange tone */
+    margin: 0;
+}
+
+.animal-body {
+    margin-top: 15px;
+}
+
+.animal-body p {
+    margin: 10px 0;
+    color: #757575;
+}
+
+.animal-img {
+    max-width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.btn-adopt {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    background-color: #FFEB3B; /* Yellow tone */
+    color: #333;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-adopt:hover {
+    background-color: #fdd835;
+    color: #fff;
 }

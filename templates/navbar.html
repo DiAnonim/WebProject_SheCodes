@@ -5,9 +5,11 @@
         <img src="{% static 'images/logo/logo.png' %}" alt="Logo">
     </div>
     <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'animal_list' %}">Animals</a>
     {% if not request.user.is_authenticated %}
         <a href="{% url 'signup' %}">Sign Up</a>
         <a href="{% url 'login' %}">Login</a>
+       
     {% else %}
         <a class="fa fa-user" href="{% url 'profile' user.id %}">Profile</a>
         <form method="post" action="{% url 'logout' %}" style="display: inline;">

@@ -9,7 +9,7 @@ class CustomUser(AbstractUser):
     class Gender(models.TextChoices):
         Man = 'Man'
         Woman =  'Woman'  
-    image=models.ImageField(upload_to='images/user',default="images/user/default.png")
+    image=models.ImageField(upload_to='media/users',default="media/users/default.png")
     gender=models.CharField(max_length=10,choices=Gender.choices,default=Gender.Man)
     birthday=models.DateField(null=True)
     phone=models.CharField(max_length=20)
@@ -37,7 +37,7 @@ class CategoryPost(models.Model):
 
 class Post(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    image=models.ImageField(upload_to='images/post', blank=True, null=True)
+    image=models.ImageField(upload_to='media/posts', blank=True, null=True)
     title = models.CharField(max_length=100)
     content = models.TextField()
     link = models.URLField(blank=True, null=True)
@@ -52,7 +52,7 @@ class Post(models.Model):
         ordering = ['-created_at']
   
 class Shelter(models.Model):
-    image=models.ImageField(upload_to='images/shelter', blank=True, null=True)
+    image=models.ImageField(upload_to='media/shelters', blank=True, null=True)
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
@@ -115,7 +115,7 @@ class Animal(models.Model):
     class Gender(models.TextChoices):
         Man = 'male'
         Woman =  'female'  
-    image=models.ImageField(upload_to='images/animals', blank=True, null=True)
+    image=models.ImageField(upload_to='media/animals', blank=True, null=True)
     name=models.CharField(max_length=100)
     category=models.ForeignKey(CategoryAnimal, on_delete=models.CASCADE)
     categoryPost=models.ForeignKey(CategoryPost, on_delete=models.CASCADE)

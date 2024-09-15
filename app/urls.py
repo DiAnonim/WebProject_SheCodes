@@ -14,6 +14,8 @@ urlpatterns = [
     path('user/delete/', DeleteUserView.as_view(), name='delete_user'),
     path('profile/detail/<int:pk>/', ProfileView.as_view(), name='profile'),
     
+    path('animals/list/', AnimalListView.as_view(), name='animal_list'),
+    
     # path('verify/<int:pk>/<str:token>/', VerifyEmailView.as_view(), name='verify'),
 
     path('shelter/create/', ShelterCreateView.as_view(), name='create_shelter'),
