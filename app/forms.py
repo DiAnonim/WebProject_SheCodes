@@ -261,6 +261,7 @@ class AnimalFormAdmin(forms.ModelForm):
         }
 
         widgets = {
+            'categoryPost': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Категория поста'}),
             'image': forms.FileInput(attrs={'class': 'form-control', 'placeholder': 'Изображение'}),
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Название'}),
             'category': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Категория'}),
@@ -268,6 +269,8 @@ class AnimalFormAdmin(forms.ModelForm):
             'breed': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Порода'}),
             'gender': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Пол'}),
             'birthdate': forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'День рождения', 'type': 'date'}),
+            'weight': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Вес'}),
+            'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Описание'}),
         }
 class UniversityFormAdmin(forms.ModelForm):
     class Meta:

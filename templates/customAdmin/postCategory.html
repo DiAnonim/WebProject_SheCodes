@@ -5,6 +5,7 @@
         <div class="title">
             <i class="uil uil-tachometer-fast-alt"></i>
             <span class="text">Категория постов</span>
+            <a style="margin-left: 20px;" href="{% url 'admin_create_categorypost' %}" class="btn btn-info">Создать</a>
             <div class="activity">
  <div class="title">
                     <i class="uil uil-clock-three"></i>
@@ -18,7 +19,18 @@
                         <span class="data-list">{{post_category.name}}</span>
                         {% endfor %}
                     </div>
-                    
+                    <div style="width: 250px;" class="data status">
+                        <span class="data-title">Управление</span>
+                        <div  class="d-flex justify-content-around">
+                            {% for categorypost in post_categories %}
+                            <a href="{% url 'admin_update_categorypost' categorypost.id %}" class="btn btn-info mb-2">Редактировать</a>
+                            <a href="{% url 'admin_delete_categorypost' categorypost.id %}" class="btn btn-info  mb-2">Удалить</a>
+
+                           
+
+
+                            {% endfor %}
+                        </div>
                 </div>
             </div>
         </div>

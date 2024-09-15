@@ -5,6 +5,7 @@
         <div class="title">
             <i class="uil uil-tachometer-fast-alt"></i>
             <span class="text">Категория животных</span>
+            <a style="margin-left: 20px;" href="{% url 'admin_create_categoryanimal' %}" class="btn btn-info">Создать</a>
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-clock-three"></i>
@@ -19,6 +20,18 @@
                         {% endfor %}
 
                     </div>
+                    <div style="width: 250px;" class="data status">
+                        <span class="data-title">Управление</span>
+                        <div  class="d-flex justify-content-around">
+                            {% for categoryanimal in category_animals %}
+                            <a href="{% url 'admin_update_categoryanimal' categoryanimal.id %}" class="btn btn-info mb-2">Редактировать</a>
+                            <a href="{% url 'admin_delete_categoryanimal' categoryanimal.id %}" class="btn btn-info  mb-2">Удалить</a>
+
+                           
+
+
+                            {% endfor %}
+                        </div>
 
                 </div>
             </div>

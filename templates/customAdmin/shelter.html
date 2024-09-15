@@ -5,6 +5,7 @@
         <div class="title">
             <i class="uil uil-tachometer-fast-alt"></i>
             <span class="text">Приюты</span>
+            <a style="margin-left: 20px;" href="{% url 'admin_create_shelter' %}" class="btn btn-info">Создать</a>
         </div>
         <div class="activity">
             <div class="title">
@@ -50,11 +51,18 @@
                     {% endfor %}
 
                 </div>
-                <div class="data status">
-                    <span class="data-title">Status</span>
-                    <span class="data-list">Liked</span>
+                <div style="width: 250px;" class="data status">
+                    <span class="data-title">Управление</span>
+                    <div  class="d-flex justify-content-around">
+                        {% for shelter in shelters %}
+                        <a href="{% url 'admin_update_shelter' shelter.id %}" class="btn btn-info mb-2">Редактировать</a>
+                        <a href="{% url 'admin_delete_shelter' shelter.id %}" class="btn btn-info  mb-2">Удалить</a>
 
-                </div>
+                       
+
+
+                        {% endfor %}
+                    </div>
             </div>
         </div>
     </div>

@@ -32,11 +32,16 @@
 
                 </div>
 
-                <div class="data status">
-                    <span class="data-title">Button</span>
-                    <span class="data-list">Liked</span>
+                <div style="width: 250px;" class="data status">
+                    <span class="data-title">Управление</span>
+                    <div  class="d-flex justify-content-around">
+                        {% for animal in universities %}
+                        <a href="{% url 'admin_update_university' animal.id %}" class="btn btn-info mb-2">Редактировать</a>
+                        <a href="{% url 'admin_delete_university' animal.id %}" class="btn btn-info  mb-2">Удалить</a>
 
-                </div>
+
+                        {% endfor %}
+                    </div>
             </div>
         </div>
     </div>
