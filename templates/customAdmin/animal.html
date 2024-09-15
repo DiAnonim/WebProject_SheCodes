@@ -43,7 +43,8 @@
                         <span class="data-title">Управление</span>
                         <div  class="d-flex justify-content-around">
                             {% for animal in animals %}
-                            <a href="{% url 'admin_create_animal' %}" class="btn btn-info mb-2">Редактировать</a>
+                            
+                            <a href="{% url 'admin_update_animal' animal.id %}" class="btn btn-info mb-2">Редактировать</a>
                             <a href="{% url 'admin_create_animal' %}" class="btn btn-info mb-2">Удалить</a>
 
                             {% endfor %}
