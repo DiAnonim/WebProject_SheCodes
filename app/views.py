@@ -155,8 +155,9 @@ class MainView(TemplateView):
 #Животные 
 class AnimalListViewAdmin(ListView):
     model = Animal
-    template_name = "categoryAnimals/index.html"
+    template_name = "customAdmin/animal.html"
     context_object_name = "animals"
+    
 class AnimalCreateViewAdmin(CreateView):
     model = Animal 
     form_class = AnimalForm
@@ -335,10 +336,13 @@ class CommentDeleteView(LoginRequiredMixin, DeleteView):
 class MainView(TemplateView):
     template_name = "customAdmin/main.html"
     
+    
+    
+    
 #Животные 
 class AnimalListView(ListView):
     model = Animal
-    template_name = "customAdmin/animal.html"
+    template_name = "sectionAnimal/home.html"
     context_object_name = "animals"
     
     
