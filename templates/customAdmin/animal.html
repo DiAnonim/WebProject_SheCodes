@@ -1,23 +1,28 @@
 {% extends 'customAdmin/home.html' %}
 {% block content %}
- <div class="title">
+<div class="dash-content">
+    <div class="overview">
+        <div class="title">
+            <i class="uil uil-tachometer-fast-alt"></i>
+            <div class="activity">
+                <div class="title">
                     <i class="uil uil-clock-three"></i>
                     <span class="text">Животные</span>
                 </div>
-               <a href="{% url 'admin_create_animal' %}" class="btn btn-info">Создать</a>
-                   
+                <a href="{% url 'admin_create_animal' %}" class="btn btn-info">Создать</a>
+
                 <div class="activity-data">
                     <div class="data names">
                         <span class="data-title">Название</span>
                         {% for animal in animals %}
                         <span class="data-list">{{animal.name}}</span>
-                        
+
                         {% endfor %}
                     </div>
                     <div class="data email">
                         <span class="data-title">Порода</span>
                         {% for animal in animals %}
-                        <span class="data-list">{{animal.breed}}</span>        
+                        <span class="data-list">{{animal.breed}}</span>
                         {% endfor %}
                     </div>
                     <div class="data joined">
@@ -27,16 +32,26 @@
                         {% endfor %}
                     </div>
 
-                      <div class="data joined">
+                    <div class="data joined">
                         <span class="data-title">Вес</span>
                         {% for animal in animals %}
                         <span class="data-list">{{animal.weight}}</span>
                         {% endfor %}
                     </div>
-                
-                    <div class="data status d-flex flex-column">
-                        <a href="{% url 'admin_create_animal' %}" class="btn btn-info mb-2">Редактировать</a>
-                        <a href="{% url 'admin_create_animal' %}" class="btn btn-info">Удалить</a>
+
+                    <div class="data status">
+                        <span class="data-title"></span>
+                        <div class="d-flex flex-column">
+                            {% for animal in animals %}
+                            <a href="{% url 'admin_create_animal' %}" class="btn btn-info mb-2">Редактировать</a>
+                            <a href="{% url 'admin_create_animal' %}" class="btn btn-info">Удалить</a>
+
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
