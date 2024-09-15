@@ -41,7 +41,6 @@ header {
     flex-direction: column;
     min-height: 100vh;
     padding-bottom: 60px;
-    /* Отступ для футера */
 }
 
 .form-section {
@@ -49,21 +48,18 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 100%;
-    max-width: 400px;
     padding: 20px;
     margin: auto;
 }
 
-.form-container {
-    text-align: center;
-}
+
 
 .form-container header {
     font-size: 24px;
     font-weight: bold;
     color: #ff9800;
-    /* Оранжевый цвет заголовка */
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .signup-form p {
@@ -76,7 +72,7 @@ header {
 .signup-form input[type="password"],
 .signup-form select,
 .signup-form input[type="date"] {
-    width: 90%;
+    width: 100%;
     padding: 10px;
     border: 1px solid #8bc34a;
     /* Зеленая рамка */
@@ -401,221 +397,91 @@ header {
 
 #footer {
     background-color: #e8f5e9;
+    /* Светлый зелёный фон */
     color: #2e7d32;
+    /* Тёмно-зелёный цвет текста */
     padding: 20px 0;
+    /* Отступы сверху и снизу */
     text-align: center;
+    /* Центрирование текста */
     border-top: 1px solid #a5d6a7;
+    /* Светло-зелёная линия сверху футера */
     display: flex;
 }
 
-.section1Footer, .section2Footer {
+.section1Footer,
+.section2Footer {
     margin: 0 auto;
     max-width: 800px;
     padding: 0;
 }
 
-ul {
+.section1Footer ul,
+.section2Footer ul {
     list-style: none;
+    /* Убираем маркеры списка */
     padding: 0;
     margin: 0;
 }
 
-p {
+.section1Footer p,
+.section2Footer p {
     font-size: 16px;
     font-weight: bold;
     color: #388e3c;
+    /* Средний зелёный цвет для заголовков секций */
     margin-bottom: 10px;
 }
 
-li {
+.section1Footer li,
+.section2Footer li {
     font-size: 14px;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
     color: #2e7d32;
+    /* Тёмно-зелёный цвет для текста списка */
 }
 
-.fas, .fab {
+.section1Footer .fas,
+.section2Footer .fab {
     margin-right: 10px;
     font-size: 18px;
     color: #4caf50;
+    /* Зелёный цвет иконок */
 }
 
-a {
+.section2Footer a {
     color: #e58735;
+    /* Средний зелёный цвет ссылок */
     text-decoration: none;
     transition: color 0.3s;
 }
 
-a:hover {
+.section2Footer a:hover {
     color: #2e7d32;
+    /* Тёмно-зелёный цвет при наведении */
 }
 
 .aHover {
     font-size: 14px;
     margin-top: 20px;
+    color: #2e7d32;
+    /* Тёмно-зелёный цвет текста */
 }
 
-.animal-list {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 15px;
-}
-
-h1 {
-    text-align: center;
-    color: #4CAF50;
-    margin-bottom: 30px;
-}
-
-
-
-/* Общие стили для форм */
-.form-section {
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 40px auto;
-}
-
-.form-container header h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #4CAF50; /* Зеленый цвет заголовка */
-}
-
-.animal-form input, .animal-form select, .animal-form textarea {
-    width: 90%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-.animal-form .submit-btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.animal-form .submit-btn:hover {
-    background-color: #45a049;
-}
-
-.already-account {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-}
-
-.already-account a {
-    color: #4CAF50;
+.aHover a {
+    color: #e58735;
+    /* Средний зелёный цвет для ссылок */
     text-decoration: none;
-    font-weight: bold;
+    transition: color 0.3s;
 }
 
-.already-account a:hover {
-    text-decoration: underline;
+.aHover a:hover {
+    color: #2e7d32;
+    /* Тёмно-зелёный цвет при наведении */
 }
 
-/* Стили для списка животных */
-.animal-list {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 15px;
-}
-
-.animal-list h1 {
-    text-align: center;
-    margin-bottom: 40px;
-    color: #4CAF50;
-}
-
-.animal-card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px;
-}
-
-.animal-card .animal-header {
-    flex-basis: 100%;
-    margin-bottom: 20px;
-}
-
-.animal-card h3 {
-    margin: 0;
-    font-size: 24px;
-    color: #333;
-}
-
-.animal-card .location {
-    font-size: 14px;
-    color: #888;
-}
-
-.animal-card .animal-body {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.animal-card img.animal-img {
-    max-width: 200px;
-    border-radius: 8px;
-}
-
-.animal-card p {
-    flex-grow: 1;
-    margin: 0 20px;
-    font-size: 16px;
-    color: #555;
-}
-
-.btn-adopt {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.btn-adopt:hover {
-    background-color: #45a049;
-}
-
-.tools {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.tools a {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.tools a:hover {
-    background-color: #45a049;
-}
 
 
 

@@ -2,7 +2,7 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('', SignUpView.as_view(), name='home'),  
+    path('', HomeView.as_view(), name='home'),  
     path('message/', MessageView.as_view(), name='message'),
     # path('error/', ErrorView.as_view(), name='error'),
 
@@ -52,8 +52,16 @@ urlpatterns = [
     path('customAdmin/university/update/<int:pk>/', UniversityUpdateViewAdmin.as_view(), name='admin_update_university'),
     path('customAdmin/mentor/update/<int:pk>/', MentorUpdateViewAdmin.as_view(), name='admin_update_mentor'),
     path('customAdmin/shelter/update/<int:pk>/', ShelterUpdateViewAdmin.as_view(), name='admin_update_shelter'),
-    path('customAdmin/categoryanimal/update/<int:pk>/', CategoryAnimalUpdateViewAdmin.as_view(), name='admin_update_categoryanimal'),
+    path('customAdmin/animal/update/<int:pk>/', CategoryAnimalUpdateViewAdmin.as_view(), name='categoryadmin_update_animal'),
     path('customAdmin/categorypost/update/<int:pk>/', PostCategoryUpdateViewAdmin.as_view(), name='admin_update_categorypost'),
     path('customAdmin/animal/update/<int:pk>/', AnimalUpdateViewAdmin.as_view(), name='admin_update_animal'),
+    # delete
+    path('customAdmin/university/delete/<int:pk>/', UniversityDeleteViewAdmin.as_view(), name='admin_delete_university'),
+    path('customAdmin/mentor/delete/<int:pk>/', MentorDeleteViewAdmin.as_view(), name='admin_delete_mentor'),
+    path('customAdmin/shelter/delete/<int:pk>/', ShelterDeleteViewAdmin.as_view(), name='admin_delete_shelter'),
+    path('customAdmin/categoryanimal/delete/<int:pk>/', CategoryAnimalDeleteViewAdmin.as_view(), name='admin_delete_categoryanimal'),
+    path('customAdmin/categorypost/delete/<int:pk>/', PostCategoryDeleteViewAdmin.as_view(), name='admin_delete_categorypost'),
+    path('customAdmin/animal/delete/<int:pk>/', AnimalDeleteViewAdmin.as_view(), name='admin_delete_animal'),
+    
 
 ]

@@ -1,26 +1,53 @@
 <!-- {% extends "base.html" %}
-{% load static %}
 
-{% block title %}<title>Animals Looking for a Home</title>{% endblock %}
+{% block title %}<title>Home</title>{% endblock %}
+
+{% block header %}
+<header class="bg-primary text-white text-center py-4">
+    <h1 class="display-4">Home</h1>
+    {% if request.user.is_authenticated %}
+    <h2 class="lead">Welcome, {{ request.user.username }}</h2>
+    {% else %}
+    <h2 class="lead">Welcome, guest</h2>
+    {% endif %}
+</header>
+{% endblock %}
 
 {% block content %}
-    <div class="animal-list">
-        <h1>Animals Looking for a Home</h1>
+<div class="container mt-4">
+
+    {% if request.user.is_authenticated %}
+    <section class="mb-4">
+        <!-- Add any user-specific tools or actions here -->
+        <a href="{% url 'create_todo' %}" class="btn btn-success">Create New Todo</a>
+    </section>
+    {% endif %}
+
+    <h2 class="mb-4">Todo List</h2>
+    <section class="todo-list">
         
-        {% for animal in animals %}
-        <div class="animal-card">
-            <div class="animal-header">
-                <h3>{{ animal.name }}</h3>
-                <span class="location"><i class="fas fa-map-marker-alt"></i> {{ animal.location }}</span>
-            </div>
-            <div class="animal-body">
-                <img src="{{ animal.image.url }}" alt="{{ animal.name }}" class="animal-img">
-                <p>{{ animal.description }}</p>
-                <a href="#" class="btn-adopt">Adopt {{ animal.name }}</a>
-            </div>
-        </div>
-        {% empty %}
-        <p>No animals available for adoption at the moment.</p>
-        {% endfor %}
-    </div>
-{% endblock %} -->
+    </section>
+
+    <section class="pagination mt-4">
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+                <li class="page-item disabled"><span class="page-link">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span></li>
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </section>
+</div>
+{% endblock %} 

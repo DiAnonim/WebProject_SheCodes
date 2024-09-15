@@ -25,6 +25,9 @@ from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
 
 
+class HomeView(TemplateView):
+    template_name = "home.html"
+
 # Вход, выход и регистрация
 class SignUpView(CreateView):
     model = CustomUser

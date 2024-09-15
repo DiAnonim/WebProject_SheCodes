@@ -4,26 +4,45 @@
 {% block title %}<title>Animals Looking for a Home</title>{% endblock %}
 
 {% block content %}
-    <div>
-        <img src="{% static 'images/animals/img1.jpg' %}" alt="Animals Looking for a Home">
+<section class="home" id="home">
+    <div class="content">
+        <h3>Animals Looking <br> for a Home</h3>
+        <a href="{% url 'create_animal' %}" class="btn btn-info">Create Animal</a>
     </div>
-    <div class="animal-list">
-        <h1>Animals Looking for a Home</h1>
-        
-        {% for animal in animals %}
-        <div class="animal-card">
-            <div class="animal-header">
-                <h3>{{ animal.name }}</h3>
-                <span class="location"><i class="fas fa-map-marker-alt"></i> {{ animal.shelter.address }}</span>
-            </div>
-            <div class="animal-body">
-                <img src="{{ animal.image }}" alt="{{ animal.name }}" class="animal-img">
-                <p>{{ animal.description }}</p>
-                <a href="#" class="btn-adopt">Adopt {{ animal.name }}</a>
-            </div>
+    <img src="{% static 'images/bottom_wave.png' %}" alt="" class="wave">
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+    <h2 class="deco-title">About Us</h2>
+    <div class="box-container">
+        <div class="image">
+            <img src="{% static 'images/about.png' %}" alt="">
         </div>
-        {% empty %}
-        <p>No animals available for adoption at the moment.</p>
-        {% endfor %}
+        <div class="content">
+            <h3 class="title">Тут вы можете найти своего нового друга</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt temporibus ipsum consectetur asperiores
+                modi ratione. Sit, dolores voluptas consequuntur dolor tempore quibusdam est obcaecati possimus omnis,
+                officiis molestias et sapiente.</p>
+        </div>
     </div>
+</section>
+
+<div class="animal-list">
+    {% for animal in animals %}
+    <div class="animal-card">
+        <div class="animal-header">
+            <h3>{{ animal.name }}</h3>
+            <span class="location"><i class="fas fa-map-marker-alt"></i> {{ animal.shelter.address }}</span>
+        </div>
+        <div class="animal-body">
+            <img src="{{ animal.image }}" alt="{{ animal.name }}" class="animal-img">
+            <p>{{ animal.description }}</p>
+            <a href="#" class="btn-adopt">Adopt {{ animal.name }}</a>
+        </div>
+    </div>
+    {% empty %}
+    <p>No animals available for adoption at the moment.</p>
+    {% endfor %}
+</div>
 {% endblock %}

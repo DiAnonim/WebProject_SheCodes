@@ -7,7 +7,7 @@
     <div class="form-container">
         <header><h2>Создание нового животного</h2></header>
         
-        <form method="POST" enctype="multipart/form-data" class="animal-form">
+        <form method="POST" enctype="multipart/form-data" class="signup-form">
             {% csrf_token %}
             {{ form.as_p }}
             <input type="submit" name="create" value="Create Animal" class="submit-btn" />
