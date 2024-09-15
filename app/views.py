@@ -344,7 +344,7 @@ class AnimalCreateViewAdmin(CreateView):
 class AnimalDeleteViewAdmin(DeleteView):
     model = Animal
     template_name = "delete_animal.html"
-    success_url = reverse_lazy('message')
+    success_url = reverse_lazy('admin_animal_list')
 
 class AnimalUpdateViewAdmin(UpdateView):
     model = Animal
@@ -378,7 +378,7 @@ class UniversityCreateViewAdmin(CreateView):
 class UniversityDeleteViewAdmin(DeleteView):
     model = University
     template_name = "delete_university.html"
-    success_url = reverse_lazy('message')
+    success_url= reverse_lazy('admin_university_list')
 
 class UniversityUpdateViewAdmin(UpdateView):
     model = University
@@ -412,7 +412,7 @@ class MentorCreateViewAdmin(CreateView):
 class MentorDeleteViewAdmin(DeleteView):
     model = Mentor
     template_name = "delete_mentor.html"
-    success_url = reverse_lazy('message')
+    success_url= reverse_lazy('admin_mentor_list')
 
 class MentorUpdateViewAdmin(UpdateView):
     model = Mentor
@@ -447,7 +447,7 @@ class CategoryAnimalCreateViewAdmin(CreateView):
 class CategoryAnimalDeleteViewAdmin(DeleteView):
     model = CategoryAnimal
     template_name = "delete_category_animal.html"
-    success_url = reverse_lazy('message')
+    success_url= reverse_lazy('admin_categoryanimal_list')
 
 class CategoryAnimalUpdateViewAdmin(UpdateView):
     model = CategoryAnimal
@@ -480,7 +480,7 @@ class PostCategoryCreateViewAdmin(CreateView):
 class PostCategoryDeleteViewAdmin(DeleteView):
     model = CategoryPost
     template_name = "delete_category_post.html"
-    success_url = reverse_lazy('message')
+    success_url= reverse_lazy('admin_categorypost_list')
 
 class PostCategoryUpdateViewAdmin(UpdateView):
     model = CategoryPost
@@ -530,7 +530,8 @@ class ShelterUpdateViewAdmin(LoginRequiredMixin, UpdateView):
 class ShelterDeleteViewAdmin(LoginRequiredMixin, DeleteView):
     model = Shelter
     template_name = "delete_shelter.html"
-    success_url = reverse_lazy('message')
+    success_url= reverse_lazy('admin_shelter_list')
+    
     
     
     
