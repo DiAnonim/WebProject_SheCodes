@@ -32,7 +32,7 @@ class CategoryPost(models.Model):
     
     class Meta:
         verbose_name = "CategoryPost"
-        verbose_name_plural = "CategoryPos"
+        verbose_name_plural = "CategoryPosts"
         ordering = ['-created_at']
 
 class Post(models.Model):

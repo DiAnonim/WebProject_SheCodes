@@ -223,18 +223,8 @@ class CategoryPostForm(forms.ModelForm):
             'name': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Название'}),
         }
 
-class CategoryAnimalForm(forms.ModelForm):
-    class Meta:
-        model = CategoryAnimal
-        fields = ['name']
 
-        labels = {
-            'name': '',
-        }
-
-        widgets = {
-            'name': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Название'}),
-        }
+        
 
 
 class CommentForm(forms.ModelForm):
