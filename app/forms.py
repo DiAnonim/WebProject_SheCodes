@@ -255,16 +255,19 @@ class AnimalFormAdmin(forms.ModelForm):
     class Meta:
         model = Animal
 
-        fields = ['image', 'name', 'category', 'shelter', 'breed', 'gender', 'birthdate']
+        fields = ['categoryPost','image', 'name', 'category', 'shelter', 'breed', 'gender', 'birthdate', 'weight', 'description']
 
         labels = {
-            'image': '',
+           'categoryPost': '',
+            'image': 'Add Image',
             'name': '',
             'category': '',
             'shelter': '',
             'breed': '',
             'gender': '',
             'birthdate': '',
+            'weight': '',
+            'description': '',
         }
 
         widgets = {
