@@ -113,15 +113,15 @@ class CategoryAnimal(models.Model):
     
 class Animal(models.Model): 
     class Gender(models.TextChoices):
-        Man = 'male'
-        Woman =  'female'  
+        Male = 'male'
+        Female =  'female'  
     image=models.ImageField(upload_to='media/animals', blank=True, null=True)
     name=models.CharField(max_length=100)
     category=models.ForeignKey(CategoryAnimal, on_delete=models.CASCADE)
     categoryPost=models.ForeignKey(CategoryPost, on_delete=models.CASCADE)
     shelter=models.ForeignKey(Shelter, on_delete=models.CASCADE) 
     breed=models.CharField(max_length=100) 
-    gender=models.CharField(max_length=10,choices=Gender.choices,default=Gender.Man)
+    gender=models.CharField(max_length=10,choices=Gender.choices,default=Gender.Male)
     birthdate=models.DateField()
     description=models.TextField()
     weight=models.FloatField()

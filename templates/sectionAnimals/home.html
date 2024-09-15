@@ -4,6 +4,10 @@
 {% block title %}<title>Animals Looking for a Home</title>{% endblock %}
 
 {% block content %}
+    <div class="tools">
+        <a href="{% url 'create_animal' %}">Create</a>
+    </div>
+
     <div class="animal-list">
         <h1>Animals Looking for a Home</h1>
         <div class="animal-card">

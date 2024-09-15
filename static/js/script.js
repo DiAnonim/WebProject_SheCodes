@@ -4,8 +4,11 @@ function setTimeoutSignUp() {
     }, 3000);
 }
 
-function setTimeoutHome() {
-    setTimeout(function () {
-        window.location.href = "../";
-    }, 4000);
+function setTimeoutHome(isAdmin) {
+    
+        setTimeout(function () {
+            window.location.href = "../";
+        }, 4000);
 }
+
+

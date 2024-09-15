@@ -92,30 +92,38 @@ class LoginForm(AuthenticationForm):
         self.fields['password'].widget = forms.PasswordInput(attrs={'class': 'inputCreate', 'placeholder': 'Пароль'})
         
         self.fields['captcha'].widget.attrs.update({'class': 'inputCreate', 'placeholder': 'Введите капчу'})
+        
+        
 class AnimalForm(forms.ModelForm):
     class Meta:
         model = Animal
 
-        fields = ['image', 'name', 'category', 'shelter', 'breed', 'gender', 'birthdate']
+        fields = ['categoryPost','image', 'name', 'category', 'shelter', 'breed', 'gender', 'birthdate', 'weight', 'description']
 
         labels = {
-            'image': '',
+            'categoryPost': '',
+            'image': 'Add Image',
             'name': '',
             'category': '',
             'shelter': '',
             'breed': '',
             'gender': '',
             'birthdate': '',
+            'weight': '',
+            'description': '',
         }
 
         widgets = {
+            'categoryPost': forms.Select(attrs={'class': 'inputCreate', 'placeholder': 'Категория поста'}),
             'image': forms.FileInput(attrs={'class': 'inputCreate', 'placeholder': 'Изображение'}),
             'name': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Название'}),
             'category': forms.Select(attrs={'class': 'inputCreate', 'placeholder': 'Категория'}),
             'shelter': forms.Select(attrs={'class': 'inputCreate', 'placeholder': 'Приют'}),
             'breed': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Порода'}),
             'gender': forms.Select(attrs={'class': 'inputCreate', 'placeholder': 'Пол'}),
-            'birthdate': forms.DateInput(attrs={'class': 'inputCreate', 'placeholder': 'День рождения', 'type': 'date'}),
+            'birthdate': forms.DateInput(attrs={'class': 'inputCreate', 'placeholder': 'Дата рождения', 'type': 'date'}),
+            'weight': forms.TextInput(attrs={'class': 'inputCreate', 'placeholder': 'Вес'}),
+            'description': forms.Textarea(attrs={'class': 'inputCreate', 'placeholder': 'Описание'}),
         }
 class UniversityForm(forms.ModelForm):
     class Meta:

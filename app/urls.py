@@ -15,6 +15,10 @@ urlpatterns = [
     path('profile/detail/<int:pk>/', ProfileView.as_view(), name='profile'),
     
     path('animals/list/', AnimalListView.as_view(), name='animal_list'),
+    path('animals/create/', AnimalCreateView.as_view(), name='create_animal'),
+    path('animals/detail/<int:pk>/', AnimalDetailView.as_view(), name='animal_detail'),
+    path('animals/update/<int:pk>/', AnimalUpdateView.as_view(), name='animal_update'),
+    path('animals/delete/<int:pk>/', AnimalDeleteView.as_view(), name='animal_delete'),
     
     # path('verify/<int:pk>/<str:token>/', VerifyEmailView.as_view(), name='verify'),
 

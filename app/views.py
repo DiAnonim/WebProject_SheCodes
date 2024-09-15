@@ -163,11 +163,10 @@ class AnimalListView(ListView):
     template_name = "sectionAnimals/home.html"
     context_object_name = "animals"
     
-    
 class AnimalCreateView(CreateView):
     model = Animal 
     form_class = AnimalForm
-    template_name = "create_animal.html"
+    template_name = "sectionAnimals/create_animal.html"
     success_url = reverse_lazy('message')
     success_message = 'Animal created successfully'
 
