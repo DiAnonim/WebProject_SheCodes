@@ -5,7 +5,7 @@ from django.views import View
 from app.forms import UserForm, LoginForm, ShelterForm,AnimalForm,UniversityForm,MentorForm,\
                         CategoryAnimalForm,CategoryPostForm, CommentForm, UpdateUserForm,\
                             ShelterFormAdmin, AnimalFormAdmin,UniversityFormAdmin,MentorFormAdmin,\
-                            CategoryAnimalFormAdmin,CategoryPostFormAdmin, CommentFormAdmin, UpdateUserFormAdmin
+                            CategoryAnimalFormAdmin,CategoryPostFormAdmin, CommentFormAdmin
                         
 
 from app.models import CustomUser, Shelter,Animal,University,Mentor,CategoryAnimal,CategoryPost, Comment
