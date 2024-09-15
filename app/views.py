@@ -333,8 +333,12 @@ class CommentDeleteView(LoginRequiredMixin, DeleteView):
     template_name = "delete_comment.html"
     success_url = reverse_lazy('message')
 
-class MainView(TemplateView):
+
+
+class MainView(ListView):
+    model = CustomUser
     template_name = "customAdmin/main.html"
+    context_object_name = "customusers"
     
     
     
