@@ -48,17 +48,17 @@
                     <i class="uil uil-thumbs-up"></i>
                     <span class="link-name">Категория животных</span>
                 </a></li>
-                <li><a href="{% url 'admin_categorypost_list' %}">
-                    <i class="uil uil-comments"></i>
-                    <span class="link-name">Категория постов</span>
-                </a></li>
+               
               
             </ul>
             
             <ul class="logout-mode">
                 <li><a href="#">
                     <i class="uil uil-signout"></i>
-                    <span class="link-name">Logout</span>
+                    <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="fa fa-sign-out" style="background: none; border: none; cursor: pointer;">Logout</button>
+                    </form>
                 </a></li>
 
                 <li class="mode">

@@ -163,7 +163,8 @@ class CommentDeleteView(LoginRequiredMixin, DeleteView):
     template_name = "delete_comment.html"
     success_url = reverse_lazy('message')
 
-
+class LibraryTemplateView(TemplateView):
+    template_name = "sectionLibrary/library.html"
 
 
     

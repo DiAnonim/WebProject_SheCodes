@@ -11,11 +11,9 @@
 {% block content %}
 <div class="profile zilla-slab-light-italic" style="min-height: 450px;">
     <div class="profile-image">
-        {% if user.image %}
-            <img src="{{ user.image.url }}" alt="{{ user.username }}'s profile picture">
-        {% else %}
-            <img src="{% static 'default-avatar.png' %}" alt="Default profile picture">
-        {% endif %}
+       
+            <img src="{% static 'images/defaultAvatar.png' %}" alt="Default profile picture">
+     
     </div>
     
     <div class="profile-info">

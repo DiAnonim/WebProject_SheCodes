@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <section class="homeLib" id="home">
+
+        <div class="content">
+            <h3>Присоединяйтесь к сообществу знаний и вдохновения!</h3>
+            <a href="#" class="btn"> Подробнее</a>
+        </div>
+
+    </section>
+
+
+    <section class="diet" id="diet">
+
+        <h1 class="heading">События</h1>
+
+       
+        <div class="image-container">
+
+            <div class="box lunch">
+                <div class="image">
+                    <img src="{% static 'images/blog1.png' %}" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="link">Прими участие и спаси жизнь</a>
+                    <p>Студенты 1-го курса, бонус 150 бир</p>
+                    <div class="icon">
+                        <a href="#"><i class="fas fa-clock"></i> 15 сентября, 2023</a>
+                        <a href="#"><i class="fas fa-user"></i> от директора NIS</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box breakfast">
+                <div class="image">
+                    <img src="{% static 'images/blog2.png' %}">
+                </div>
+                <div class="content">
+                    <a href="#" class="link">ЗооВолна доброты</a>
+                    <p>Выпускники колледжа, бонус 350 бир</p>
+                    <div class="icon">
+                        <a href="#"><i class="fas fa-clock"></i> 15 сентября, 2024</a>
+                        <a href="#"><i class="fas fa-user"></i> от администратора</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box breakfast">
+                <div class="image">
+                    <img src="{% static 'images/blog3.png' %}" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="link">Час с книгой</a>
+                    <p>Студенты 1-го курса, бонус 150 бир</p>
+                    <div class="icon">
+                        <a href="#"><i class="fas fa-clock"></i> 20 сентября, 2023</a>
+                        <a href="#"><i class="fas fa-user"></i> от администратора</a>
+                    </div>
+                </div>
+            </div>
+
+      
+
+        
+
+
+         
+
+        </div>
+
+    </section>
+
+
+</body>
+</html>
+{% endblock %}

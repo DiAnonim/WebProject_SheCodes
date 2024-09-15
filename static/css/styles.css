@@ -486,3 +486,82 @@ header {
 
 
 
+
+
+
+
+/* Profile container */
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile image section */
+.profile-image {
+    flex: 1 1 200px;
+    max-width: 200px;
+    margin: 10px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid #4caf50; /* Green border for contrast */
+}
+
+/* Profile info section */
+.profile-info {
+    flex: 2 1 300px;
+    padding: 15px;
+}
+
+.profile-info h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.profile-info p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #666;
+}
+
+.profile-info a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.profile-info a:hover {
+    background-color: #218838;
+}
+
+/* Delete button */
+.profile-info form button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile-info form button:hover {
+    background-color: #c82333;
+}
+
+

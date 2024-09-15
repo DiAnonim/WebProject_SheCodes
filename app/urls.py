@@ -19,7 +19,7 @@ urlpatterns = [
     path('animals/detail/<int:pk>/', AnimalDetailView.as_view(), name='animal_detail'),
     path('animals/update/<int:pk>/', AnimalUpdateView.as_view(), name='animal_update'),
     path('animals/delete/<int:pk>/', AnimalDeleteView.as_view(), name='animal_delete'),
-    
+    path('library/', LibraryTemplateView.as_view(), name='library'),
     # path('verify/<int:pk>/<str:token>/', VerifyEmailView.as_view(), name='verify'),
 
     # path('shelter/create/', ShelterCreateView.as_view(), name='create_shelter'),

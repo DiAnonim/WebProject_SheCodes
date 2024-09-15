@@ -253,6 +253,12 @@ section{
   padding: 20px;
 }
 
+.animal-body img {
+  width: 30%;
+  height: auto;
+  object-fit: contain;
+}
+
 .animal-card .animal-img {
   width: 100%;
   height: auto;
