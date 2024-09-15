@@ -1,3 +1,7 @@
+from django.db.models.base import Model as Model
+from django.db.models.query import QuerySet
+from django.forms import BaseModelForm
+from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.views import View
@@ -335,7 +339,7 @@ class AnimalCreateViewAdmin(CreateView):
     model = Animal 
     form_class = AnimalFormAdmin
     template_name = "customAdmin/customAdminCreate.html"
-    success_url = reverse_lazy('customAdmin/animal.html')
+    success_url = reverse_lazy('admin_animal_list')
 
 class AnimalDeleteViewAdmin(DeleteView):
     model = Animal
@@ -344,10 +348,15 @@ class AnimalDeleteViewAdmin(DeleteView):
 
 class AnimalUpdateViewAdmin(UpdateView):
     model = Animal
-    template_name = "update_animal.html"
     form_class = AnimalForm
-    success_url = reverse_lazy('message')
+    template_name = "customAdmin/customAdminCreate.html.html"
+    def get_object(self) :
+        return get_object_or_404(Animal, pk=self.kwargs.get('pk'))
 
+    def form_valid(self, form) :
+        form.save()
+        return redirect('admin_animal_list')
+      
 class AnimalDetailViewAdmin(DetailView):
     model = Animal
     template_name = "animal_detail.html"
@@ -373,9 +382,14 @@ class UniversityDeleteViewAdmin(DeleteView):
 
 class UniversityUpdateViewAdmin(UpdateView):
     model = University
-    template_name = "update_university.html"
-    form_class = UniversityForm
-    success_url = reverse_lazy('message')
+    form_class = UniversityFormAdmin
+    template_name = "customAdmin/customAdminCreate.html"
+    def get_object(self) :
+        return get_object_or_404(University, pk=self.kwargs.get('pk'))
+
+    def form_valid(self, form) :
+        form.save()
+        return redirect('admin_university_list')
 
 class UniversityDetailViewAdmin(DetailView):
     model = University
@@ -402,9 +416,15 @@ class MentorDeleteViewAdmin(DeleteView):
 
 class MentorUpdateViewAdmin(UpdateView):
     model = Mentor
-    form_class = MentorForm
-    template_name = "update_mentor.html"
-    success_url = reverse_lazy('message')
+    form_class = MentorFormAdmin
+    template_name = "customAdmin/customAdminCreate.html"
+    def get_object(self) :
+        return get_object_or_404(Mentor, pk=self.kwargs.get('pk'))
+
+    def form_valid(self, form) :
+        form.save()
+        return redirect('admin_mentor_list')
+
 
 class MentorDetailViewAdmin(DetailView):
     model = Mentor
@@ -432,8 +452,13 @@ class CategoryAnimalDeleteViewAdmin(DeleteView):
 class CategoryAnimalUpdateViewAdmin(UpdateView):
     model = CategoryAnimal
     form_class = CategoryAnimalFormAdmin
-    template_name = "update_category_animal.html"
-    success_url = reverse_lazy('message')
+    template_name = "customAdmin/customAdminCreate.html"
+    def get_object(self) :
+        return get_object_or_404(CategoryAnimal, pk=self.kwargs.get('pk'))
+
+    def form_valid(self, form) :
+        form.save()
+        return redirect('admin_categoryanimal_list')
 
 class CategoryAnimalDetailViewAdmin(DetailView):
     model = CategoryAnimal
@@ -459,9 +484,14 @@ class PostCategoryDeleteViewAdmin(DeleteView):
 
 class PostCategoryUpdateViewAdmin(UpdateView):
     model = CategoryPost
-    form_class = CategoryPostForm
-    template_name = "update_category_post.html"
-    success_url = reverse_lazy('message')
+    form_class = CategoryPostFormAdmin
+    template_name = "customAdmin/customAdminCreate.html"
+    def get_object(self) :
+        return get_object_or_404(CategoryPost, pk=self.kwargs.get('pk'))
+
+    def form_valid(self, form) :
+        form.save()
+        return redirect('admin_categorypost_list')
 
 class PostCategoryDetailViewAdmin(DetailView):
     model = CategoryPost
@@ -488,9 +518,14 @@ class ShelterDetailViewAdmin(LoginRequiredMixin, DetailView):
     
 class ShelterUpdateViewAdmin(LoginRequiredMixin, UpdateView):
     model = Shelter
-    form_class = ShelterForm
-    template_name = "update_shelter.html"
-    success_url = reverse_lazy('message')
+    form_class = ShelterFormAdmin
+    template_name = "customAdmin/customAdminCreate.html"
+    def get_object(self) :
+        return get_object_or_404(Shelter, pk=self.kwargs.get('pk'))
+
+    def form_valid(self, form) :
+        form.save()
+        return redirect('admin_shelter_list')
     
 class ShelterDeleteViewAdmin(LoginRequiredMixin, DeleteView):
     model = Shelter
