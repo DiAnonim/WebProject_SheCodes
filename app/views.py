@@ -3,7 +3,10 @@ from django.urls import reverse_lazy, reverse
 from django.views import View
 
 from app.forms import UserForm, LoginForm, ShelterForm,AnimalForm,UniversityForm,MentorForm,\
-                        CategoryAnimalForm,CategoryPostForm, CommentForm, UpdateUserForm
+                        CategoryAnimalForm,CategoryPostForm, CommentForm, UpdateUserForm,\
+                            ShelterFormAdmin, AnimalFormAdmin,UniversityFormAdmin,MentorFormAdmin,\
+                            CategoryAnimalFormAdmin,CategoryPostFormAdmin, CommentFormAdmin, UpdateUserFormAdmin
+                        
 
 from app.models import CustomUser, Shelter,Animal,University,Mentor,CategoryAnimal,CategoryPost, Comment
 
@@ -330,10 +333,9 @@ class AnimalListViewAdmin(ListView):
     
 class AnimalCreateViewAdmin(CreateView):
     model = Animal 
-    form_class = AnimalForm
+    form_class = AnimalFormAdmin
     template_name = "customAdmin/customAdminCreate.html"
-    success_url = reverse_lazy('message')
-    success_message = 'Animal created successfully'
+    success_url = reverse_lazy('customAdmin/animal.html')
 
 class AnimalDeleteViewAdmin(DeleteView):
     model = Animal
@@ -360,10 +362,9 @@ class UniversityListViewAdmin(ListView):
 
 class UniversityCreateViewAdmin(CreateView):
     model = University
-    form_class = UniversityForm
+    form_class = UniversityFormAdmin
     template_name = "customAdmin/customAdminCreate.html"
-    success_url = reverse_lazy('message')
-    success_message = 'University created successfully'
+    success_url = reverse_lazy('admin_university_list')
 
 class UniversityDeleteViewAdmin(DeleteView):
     model = University
@@ -389,10 +390,10 @@ class MentorListViewAdmin(ListView):
 
 class MentorCreateViewAdmin(CreateView):
     model = Mentor
-    form_class = MentorForm
+    form_class = MentorFormAdmin
     template_name = "customAdmin/customAdminCreate.html"
-    success_url = reverse_lazy('message')
-    success_message = 'Mentor created successfully'
+    success_url = reverse_lazy('admin_mentor_list')
+   
 
 class MentorDeleteViewAdmin(DeleteView):
     model = Mentor
@@ -418,10 +419,10 @@ class CategoryAnimalListViewAdmin(ListView):
 
 class CategoryAnimalCreateViewAdmin(CreateView):
     model = CategoryAnimal
-    form_class = CategoryAnimalForm
+    form_class = CategoryAnimalFormAdmin
     template_name = "customAdmin/customAdminCreate.html"
-    success_url = reverse_lazy('message')
-    success_message = 'Category created successfully'
+    success_url = reverse_lazy('admin_categoryanimal_list')
+
 
 class CategoryAnimalDeleteViewAdmin(DeleteView):
     model = CategoryAnimal
@@ -430,7 +431,7 @@ class CategoryAnimalDeleteViewAdmin(DeleteView):
 
 class CategoryAnimalUpdateViewAdmin(UpdateView):
     model = CategoryAnimal
-    form_class = CategoryAnimalForm
+    form_class = CategoryAnimalFormAdmin
     template_name = "update_category_animal.html"
     success_url = reverse_lazy('message')
 
@@ -447,10 +448,9 @@ class PostCategoryListViewAdmin(ListView):
 
 class PostCategoryCreateViewAdmin(CreateView):
     model = CategoryPost
-    form_class = CategoryPostForm
+    form_class = CategoryPostFormAdmin
     template_name = "customAdmin/customAdminCreate.html"
-    success_url = reverse_lazy('message')
-    success_message = 'Category created successfully'
+    success_url = reverse_lazy('admin_categorypost_list')
 
 class PostCategoryDeleteViewAdmin(DeleteView):
     model = CategoryPost
@@ -476,10 +476,10 @@ class ShelterListViewAdmin(ListView):
 
 class ShelterCreateViewAdmin(LoginRequiredMixin, CreateView):
     model = Shelter
-    form_class = ShelterForm
+    form_class = ShelterFormAdmin
     template_name = "customAdmin/customAdminCreate.html"
-    success_url = reverse_lazy('message')
-    success_message = 'Shelter created successfully'
+    success_url = reverse_lazy('admin_shelter_list.html')
+ 
     
 class ShelterDetailViewAdmin(LoginRequiredMixin, DetailView):
     model = Shelter

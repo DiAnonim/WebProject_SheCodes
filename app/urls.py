@@ -40,4 +40,20 @@ urlpatterns = [
     path('customAdmin/categorypost',PostCategoryListViewAdmin.as_view(), name='admin_categorypost_list'),
     path('customAdmin/shelter/', ShelterListViewAdmin.as_view(), name='admin_shelter_list'),
     path('customAdmin/animal/', AnimalListViewAdmin.as_view(), name='admin_animal_list'),
+   
+    #create
+    path('customAdmin/university/create/', UniversityCreateViewAdmin.as_view(), name='admin_create_university'),
+    path('customAdmin/mentor/create/', MentorCreateViewAdmin.as_view(), name='admin_create_mentor'),
+    path('customAdmin/shelter/create/', ShelterCreateViewAdmin.as_view(), name='admin_create_shelter'),
+    path('customAdmin/categoryanimal/create/', CategoryAnimalCreateViewAdmin.as_view(), name='admin_create_categoryanimal'),
+    path('customAdmin/categorypost/create/', PostCategoryCreateViewAdmin.as_view(), name='admin_create_categorypost'),
+    path('customAdmin/animal/create/', AnimalCreateViewAdmin.as_view(), name='admin_create_animal'),
+    #update
+    path('customAdmin/university/update/<int:pk>/', UniversityUpdateViewAdmin.as_view(), name='admin_update_university'),
+    path('customAdmin/mentor/update/<int:pk>/', MentorUpdateViewAdmin.as_view(), name='admin_update_mentor'),
+    path('customAdmin/shelter/update/<int:pk>/', ShelterUpdateViewAdmin.as_view(), name='admin_update_shelter'),
+    path('customAdmin/categoryanimal/update/<int:pk>/', CategoryAnimalUpdateViewAdmin.as_view(), name='admin_update_categoryanimal'),
+    path('customAdmin/categorypost/update/<int:pk>/', PostCategoryUpdateViewAdmin.as_view(), name='admin_update_categorypost'),
+    path('customAdmin/animal/update/<int:pk>/', AnimalUpdateViewAdmin.as_view(), name='admin_update_animal'),
+
 ]

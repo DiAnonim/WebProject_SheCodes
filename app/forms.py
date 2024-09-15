@@ -92,6 +92,7 @@ class LoginForm(AuthenticationForm):
         self.fields['password'].widget = forms.PasswordInput(attrs={'class': 'inputCreate', 'placeholder': 'Пароль'})
         
         self.fields['captcha'].widget.attrs.update({'class': 'inputCreate', 'placeholder': 'Введите капчу'})
+
         
         
 class AnimalForm(forms.ModelForm):
@@ -248,3 +249,153 @@ class CommentForm(forms.ModelForm):
         }
         
     
+#admin form 
+
+class AnimalFormAdmin(forms.ModelForm):
+    class Meta:
+        model = Animal
+
+        fields = ['image', 'name', 'category', 'shelter', 'breed', 'gender', 'birthdate']
+
+        labels = {
+            'image': '',
+            'name': '',
+            'category': '',
+            'shelter': '',
+            'breed': '',
+            'gender': '',
+            'birthdate': '',
+        }
+
+        widgets = {
+            'image': forms.FileInput(attrs={'class': 'form-control', 'placeholder': 'Изображение'}),
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Название'}),
+            'category': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Категория'}),
+            'shelter': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Приют'}),
+            'breed': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Порода'}),
+            'gender': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Пол'}),
+            'birthdate': forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'День рождения', 'type': 'date'}),
+        }
+class UniversityFormAdmin(forms.ModelForm):
+    class Meta:
+        model = University
+
+        fields = ['image', 'name', 'website', 'phone_number']
+
+        labels = {
+            'image': '',
+            'name': '',
+            'website': '',
+            'phone_number': '',
+       
+        }
+
+        widgets = {
+            'image': forms.FileInput(attrs={'class': 'form-control', 'placeholder': 'Изображение'}),
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Название'}),
+            'website': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Сайт'}),
+            'phone_number': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Телефон'}),
+            
+        }
+
+class CategoryAnimalFormAdmin(forms.ModelForm):
+    class Meta:
+        model = CategoryAnimal
+
+        fields = ['name']
+
+        labels = {
+            'name': '',
+        }
+
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Название'}),
+        }
+class MentorFormAdmin(forms.ModelForm):
+    class Meta:
+        model = Mentor
+
+        fields = ['image', 'name', 'surname', 'email', 'typeOfActivity', 'phone_number']
+
+        labels = {
+            'image': '',
+            'name': '',
+            'surname': '',
+            'email': '',
+            'typeOfActivity': '',
+            'phone_number': '',
+        }
+
+        widgets = {
+            'image': forms.FileInput(attrs={'class': 'form-control', 'placeholder': 'Изображение'}),
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Имя'}),
+            'surname': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Фамилия'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}),
+            'typeOfActivity': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Тип активности'}),
+            'phone_number': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Телефон'}),
+        }
+
+
+class ShelterFormAdmin(forms.ModelForm):
+    class Meta:
+        model = Shelter
+        
+        fields = ['image', 'name', 'address', 'city', 'phoneNumber', 'description']
+        
+        labels = {
+            'image': '',
+            'name': '',
+            'address': '',
+            'city': '',
+            'phoneNumber': '',
+            'description': '',
+        }
+        
+        widgets = {
+            'image': forms.FileInput(attrs={'class': 'form-control', 'placeholder': 'Изображение'}),
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Название'}),
+            'address': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Адрес'}),
+            'city': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Город'}),
+            'phoneNumber': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Телефон'}),
+            'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Описание'}),
+        }
+
+class CategoryPostFormAdmin(forms.ModelForm):
+    class Meta:
+        model = CategoryPost
+        fields = ['name']
+
+        labels = {
+            'name': '',
+        }
+
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Название'}),
+        }
+
+class CategoryAnimalFormAdmin(forms.ModelForm):
+    class Meta:
+        model = CategoryAnimal
+        fields = ['name']
+
+        labels = {
+            'name': '',
+        }
+
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Название'}),
+        }
+
+
+class CommentFormAdmin(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['text']
+        labels = {
+            'text': '',
+        }
+        widgets = {
+            'text': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Текст комментария'}),
+        }
+        
+

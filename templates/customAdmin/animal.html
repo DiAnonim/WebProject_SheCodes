@@ -4,7 +4,8 @@
                     <i class="uil uil-clock-three"></i>
                     <span class="text">Животные</span>
                 </div>
-
+               <a href="{% url 'admin_create_animal' %}" class="btn btn-info">Создать</a>
+                   
                 <div class="activity-data">
                     <div class="data names">
                         <span class="data-title">Название</span>
@@ -33,9 +34,9 @@
                         {% endfor %}
                     </div>
                 
-                    <div class="data status">
-                        <span class="data-title">Status</span>
-                        <span class="data-list">Liked</span>  
+                    <div class="data status d-flex flex-column">
+                        <a href="{% url 'admin_create_animal' %}" class="btn btn-info mb-2">Редактировать</a>
+                        <a href="{% url 'admin_create_animal' %}" class="btn btn-info">Удалить</a>
                     </div>
                 </div>
 {% endblock %}
