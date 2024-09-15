@@ -110,6 +110,8 @@ class CategoryAnimal(models.Model):
         verbose_name = "CategoryAnimal"
         verbose_name_plural = "CategoryAnimals"
         ordering = ['-created_at']
+        
+        
     
 class Animal(models.Model): 
     class Gender(models.TextChoices):
@@ -119,7 +121,7 @@ class Animal(models.Model):
     name=models.CharField(max_length=100)
     category=models.ForeignKey(CategoryAnimal, on_delete=models.CASCADE)
     categoryPost=models.ForeignKey(CategoryPost, on_delete=models.CASCADE)
-    shelter=models.ForeignKey(Shelter, on_delete=models.CASCADE) 
+    shelter=models.ForeignKey(Shelter, related_name="animals",  on_delete=models.CASCADE) 
     breed=models.CharField(max_length=100) 
     gender=models.CharField(max_length=10,choices=Gender.choices,default=Gender.Male)
     birthdate=models.DateField()

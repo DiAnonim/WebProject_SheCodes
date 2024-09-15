@@ -3,13 +3,13 @@
 <div class="dash-content">
     <div class="overview">
         <div class="title">
-            <i class="uil uil-tachometer-fast-alt"></i>
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-clock-three"></i>
                     <span class="text">Животные</span>
+                    <a style="margin-left: 20px;" href="{% url 'admin_create_animal' %}" class="btn btn-info">Создать</a>
                 </div>
-                <a href="{% url 'admin_create_animal' %}" class="btn btn-info">Создать</a>
+                
 
                 <div class="activity-data">
                     <div class="data names">
@@ -39,12 +39,12 @@
                         {% endfor %}
                     </div>
 
-                    <div class="data status">
-                        <span class="data-title"></span>
-                        <div class="d-flex flex-column">
+                    <div style="width: 250px;" class="data status">
+                        <span class="data-title">Управление</span>
+                        <div  class="d-flex justify-content-around">
                             {% for animal in animals %}
                             <a href="{% url 'admin_create_animal' %}" class="btn btn-info mb-2">Редактировать</a>
-                            <a href="{% url 'admin_create_animal' %}" class="btn btn-info">Удалить</a>
+                            <a href="{% url 'admin_create_animal' %}" class="btn btn-info mb-2">Удалить</a>
 
                             {% endfor %}
                         </div>
